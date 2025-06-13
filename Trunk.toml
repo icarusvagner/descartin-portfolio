@@ -1,0 +1,17 @@
+[serve]
+addresses = ["127.0.0.1"]
+port = 1374
+open = false
+no_autoreload = false
+
+[build]
+target = "index.html"
+dist = "dist"
+
+[[hooks]]
+stage = "build"
+command = "sh"
+command_arguments = ["-c", "npx @tailwindcss/cli -i ./style/globals.css -o $TRUNK_STAGING_DIR/style/globals.css"]
+
+[clean]
+cargo = true
