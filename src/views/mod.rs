@@ -1,8 +1,11 @@
 use leptos::prelude::*;
 
-use crate::sections::hero_section::HeroSection;
+use crate::sections::{case_studies_section::CaseStudiesSection, hero_section::HeroSection};
 
 #[component]
 pub fn IndexView() -> impl IntoView {
-    view! { <HeroSection /> }
+    view! {
+        <HeroSection />
+        <CaseStudiesSection />
+    }
 }

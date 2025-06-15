@@ -13,7 +13,7 @@ pub fn HeroSection() -> impl IntoView {
             </div>
 
             <div class="z-10 flex flex-col gap-10 px-10 sm:px-18 md:px-36 lg:px-44">
-                <h1 class="text-left text-4xl font-black tracking-wide text-slate-300 lg:text-5xl">
+                <h1 class="text-left text-4xl font-oswald font-black tracking-wide text-slate-300 lg:text-5xl">
                     "Lance Phillip Descartin"
                 </h1>
                 <h3 class="text-left font-mono font-extrabold tracking-wider text-slate-400 italic">
@@ -22,22 +22,22 @@ pub fn HeroSection() -> impl IntoView {
 
                 <A
                     href="#"
-                    attr:class="group relative inline-flex h-12 w-40 items-center justify-center bg-[#FD6E09]"
+                    attr:class="group relative inline-flex h-12 w-40 items-center justify-center bg-pumpkin"
                 >
-                    <span class="absolute top-0 right-0 h-full w-0 bg-[#170BC1] transition-all duration-500 ease-in-out group-hover:left-0 group-hover:right-auto group-hover:w-full"></span>
+                    <span class="absolute top-0 right-0 h-full w-0 bg-medium-blue transition-all duration-500 ease-in-out group-hover:left-0 group-hover:right-auto group-hover:w-full"></span>
 
                     <span class="z-10 text-xl font-medium tracking-wide text-slate-100">
                         "About me"
                     </span>
                     <Icon
-                        icon=icondata::BsArrowRight
+                        icon=icondata::CgArrowLongRight
                         attr:class="absolute top-2 -right-7 h-8 w-12 text-slate-100 transition-all duration-200 ease-initial group-hover:translate-x-1"
                     />
                 </A>
             </div>
 
             <div class="absolute bottom-0 left-1/2 -translate-x-1/2 group">
-                <A href="#" attr:class="relative flex flex-col items-center">
+                <A href="#case_studies" attr:class="relative flex flex-col items-center">
                     <h1 class="text-sm font-medium text-slate-50">"Works"</h1>
                     <div class="mt-2 h-10 w-0.5 bg-slate-500 group-hover:bg-slate-200 duration-300 ease-initial"></div>
                     <Icon

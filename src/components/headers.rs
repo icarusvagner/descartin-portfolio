@@ -6,10 +6,11 @@ use crate::components::svgs::InitialSVGLogoTransparent;
 #[component]
 pub fn FirstHeader() -> impl IntoView {
     view! {
-        <nav class="flex items-center px-3 sm:px-8 md:px-12 lg:px-24 fixed top-0 w-full py-2.5 z-[999]">
-            <A href="#" attr:class="group">
+        <nav class="flex items-center px-3 sm:px-8 md:px-12 lg:px-24 absolute top-0 w-full py-2.5 z-[999]">
+            <A href="/" attr:class="group">
                 <InitialSVGLogoTransparent class="h-12 w-24 text-neutral-500 group-hover:text-neutral-100 duration-400 ease-initial" />
             </A>
+
             <div class="mx-auto"></div>
 
             <div class="flex items-center gap-4">

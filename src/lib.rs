@@ -6,7 +6,7 @@ pub mod sections;
 pub mod views;
 
 use leptos::prelude::*;
-use leptos_meta::{provide_meta_context, Title};
+use leptos_meta::{provide_meta_context, Html, Title};
 use routes::AppRoutes;
 
 #[component]
@@ -15,6 +15,7 @@ pub fn App() -> impl IntoView {
 
     view! {
         <Title text="Lance Phillip Descartin - Interactive Frontend" />
+        <Html {..} class="scroll-smooth" />
 
         <main class="min-h-screen">
             <AppRoutes />
