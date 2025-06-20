@@ -1,3 +1,5 @@
+pub mod case_studies;
+
 use leptos::prelude::*;
 
 use crate::sections::{case_studies_section::CaseStudiesSection, hero_section::HeroSection};

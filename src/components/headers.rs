@@ -23,7 +23,7 @@ pub fn FirstHeader() -> impl IntoView {
 }
 
 #[component]
-fn LinkTag(
+pub fn LinkTag(
     #[prop(into)] link: Signal<String>,
     #[prop(into)] title: Signal<String>,
 ) -> impl IntoView {

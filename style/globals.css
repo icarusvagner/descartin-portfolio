@@ -28,3 +28,15 @@
     --color-medium-blue: var(--medium-blue);
     --color-caribbean-current: var(--caribbean-current);
 }
+
+@layer components {
+    .radient-medium-blue-bg {
+        background: #170BC1;
+        background: linear-gradient(to right, #170BC1 0%, #00515E 100%);
+    }
+
+    .radient-pumpkin-bg {
+        background: #FD6E09;
+        background: linear-gradient(to bottom right, #FD6E09 0%, #E81814 100%);
+    }
+}

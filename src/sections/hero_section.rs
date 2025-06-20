@@ -7,7 +7,7 @@ use crate::components::svgs::InitialSVGLogo;
 #[component]
 pub fn HeroSection() -> impl IntoView {
     view! {
-        <section class="relative flex min-h-[580px] items-center bg-slate-900">
+        <section id="top" class="relative flex min-h-[580px] items-center bg-slate-900">
             <div class="absolute top-24 -translate-x-1/2 left-1/2 z-0 w-48 h-80">
                 <InitialSVGLogo class="h-full w-full" />
             </div>
@@ -22,9 +22,9 @@ pub fn HeroSection() -> impl IntoView {
 
                 <A
                     href="#"
-                    attr:class="group relative inline-flex h-12 w-40 items-center justify-center bg-pumpkin"
+                    attr:class="group relative inline-flex h-12 w-40 items-center justify-center radient-pumpkin-bg"
                 >
-                    <span class="absolute top-0 right-0 h-full w-0 bg-medium-blue transition-all duration-500 ease-in-out group-hover:left-0 group-hover:right-auto group-hover:w-full"></span>
+                    <span class="absolute top-0 right-0 h-full w-0 radient-medium-blue-bg transition-all duration-500 ease-in-out group-hover:left-0 group-hover:right-auto group-hover:w-full"></span>
 
                     <span class="z-10 text-xl font-medium tracking-wide text-slate-100">
                         "About me"

@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use leptos_router::{components::Outlet, hooks::use_location};
 
-use crate::components::{headers::FirstHeader, svgs::InitialSVGLogo};
+use crate::components::{footers::LeadFooter, headers::FirstHeader, svgs::InitialSVGLogo};
 
 #[component]
 pub fn MainLayout() -> impl IntoView {
@@ -28,6 +28,7 @@ fn OutletComponent() -> impl IntoView {
     view! {
         <FirstHeader />
         <Outlet />
+        <LeadFooter />
     }
 }
 
