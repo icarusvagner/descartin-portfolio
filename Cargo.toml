@@ -32,7 +32,7 @@ icondata = { version = "0.6" }
 icondata_core = { version = "0.1" }
 leptos_icons = { version = "0.6" }
 
-leptos-use = { version = "0.16.0-beta2", features = ["storage", "use_event_listener", "on_click_outside", "use_window_focus"] }
+leptos-use = { version = "0.16.0-beta2", features = ["storage", "use_event_listener", "on_click_outside", "use_window_focus", "use_intersection_observer"] }
 leptos_query = { version = "0.5", features = ["csr"] }
 
 [dev-dependencies]

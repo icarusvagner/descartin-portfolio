@@ -12,7 +12,7 @@ pub fn MainLayout() -> impl IntoView {
         show_loader.set(true);
         set_timeout(
             move || show_loader.set(false),
-            std::time::Duration::from_millis(1200),
+            std::time::Duration::from_millis(1100),
         );
     });
 

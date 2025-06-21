@@ -4,8 +4,8 @@ use leptos_icons::Icon;
 #[component]
 pub fn CaseStudiesSection() -> impl IntoView {
     view! {
-        <section id="case_studies" class="py-5 pt-12 min-h-screen relative overflow-hidden">
-            <h1 class="text-center text-2xl text-neutral-500 font-black uppercase">
+        <section id="case_studies" class="py-5 pt-22 min-h-screen relative overflow-hidden">
+            <h1 class="text-center text-xl text-neutral-400 font-black uppercase">
                 "case studies"
             </h1>
             <h3 class="text-4xl capitalize font-black tracking-wide text-neutral-800 text-center mt-4">
@@ -33,6 +33,13 @@ pub fn CaseStudiesSection() -> impl IntoView {
                     count="03"
                     link="/case-studies/goldenyears"
                     direction=Direction::ToRight
+                />
+                <CaseComponent
+                    title="Castlebyte Techsolutions"
+                    bg_img="/public/assets/castlebyte-techsolutions.png"
+                    count="04"
+                    link="/case-studies/castlebyte-techsolutions"
+                    direction=Direction::ToLeft
                 />
             </div>
         </section>

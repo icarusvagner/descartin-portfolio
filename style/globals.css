@@ -4,9 +4,9 @@
 
 :root {
     /* Fonts */
-    --poppins: font-family: "Poppins", sans-serif;
-    --lora: font-family: "Lora", serif;
-    --oswald: font-family: "Oswald", sans-serif;
+    --poppins: "Poppins", sans-serif;
+    --lora: "Lora", serif;
+    --oswald: "Oswald", sans-serif;
 
     /* CSS HEX */
     --pumpkin: #fd6e09ff;
@@ -27,16 +27,30 @@
     --color-pumpkin: var(--pumpkin);
     --color-medium-blue: var(--medium-blue);
     --color-caribbean-current: var(--caribbean-current);
+    --color-linear-pumpkin: linear-gradient(to bottom right, var(--pumpkin) 0%, #E81814 100%);
+    --color-linear-medium-blue: linear-gradient(to right, var(--medium-blue) 0%, #00515E 100%);
 }
 
 @layer components {
     .radient-medium-blue-bg {
-        background: #170BC1;
-        background: linear-gradient(to right, #170BC1 0%, #00515E 100%);
+        background: var(--medium-blue);
+        background: linear-gradient(to right, var(--medium-blue) 0%, #00515E 100%);
     }
 
     .radient-pumpkin-bg {
-        background: #FD6E09;
-        background: linear-gradient(to bottom right, #FD6E09 0%, #E81814 100%);
+        background: var(--pumpkin);
+        background: linear-gradient(to bottom right, var(--pumpkin) 0%, #E81814 100%);
+    }
+
+    .main-hero-title {
+        @apply font-oswald font-bold relative;
+        margin-bottom: .0938066507em;
+        font-size: 3.9975843648em;
+        line-height: .9380665066;
+    }
+
+    .contact-about {
+        @apply mb-[.2652050919em] text-[1.414em] font-mono font-bold;
+        line-height: 1.3260254597;
     }
 }

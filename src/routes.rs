@@ -13,8 +13,10 @@ pub fn AppRoutes() -> impl IntoView {
             <Routes fallback=|| "not found".into_any()>
                 <ParentRoute path=StaticSegment("") view=main_layout::MainLayout>
                     <Route path=StaticSegment("") view=IndexView />
+                </ParentRoute>
+                <ParentRoute path=StaticSegment("case-studies") view=ct_layout::CaseStudyLayout>
                     <Route
-                        path=(StaticSegment("case-studies"), ParamSegment("case"))
+                        path=(StaticSegment(""), ParamSegment("case"))
                         view=case_studies::CaseStudiesView
                     />
                 </ParentRoute>

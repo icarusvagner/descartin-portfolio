@@ -13,16 +13,18 @@ pub fn HeroSection() -> impl IntoView {
             </div>
 
             <div class="z-10 flex flex-col gap-10 px-10 sm:px-18 md:px-36 lg:px-44">
-                <h1 class="text-left text-4xl font-oswald font-black tracking-wide text-slate-300 lg:text-5xl">
+                <h1 class="main-hero-title text-left font-black tracking-wide text-slate-300 relative">
                     "Lance Phillip Descartin"
+                    <span class="absolute right-0 top-0 w-full h-full bg-neutral-300 z-10 scale-out-right"></span>
                 </h1>
-                <h3 class="text-left font-mono font-extrabold tracking-wider text-slate-400 italic">
+                <h3 class="text-left font-lora font-extrabold tracking-wider text-slate-400 italic relative">
                     "Full-stack Software Developer"
+                    <span class="absolute left-0 top-0 w-full h-full bg-neutral-300 z-10 scale-out-left"></span>
                 </h3>
 
                 <A
                     href="#"
-                    attr:class="group relative inline-flex h-12 w-40 items-center justify-center radient-pumpkin-bg"
+                    attr:class="slide-in-elliptic-left-fwd group relative inline-flex h-12 w-40 items-center justify-center radient-pumpkin-bg"
                 >
                     <span class="absolute top-0 right-0 h-full w-0 radient-medium-blue-bg transition-all duration-500 ease-in-out group-hover:left-0 group-hover:right-auto group-hover:w-full"></span>
 
@@ -54,7 +56,7 @@ pub fn HeroSection() -> impl IntoView {
 #[component]
 fn IconLinks() -> impl IntoView {
     view! {
-        <div class="absolute top-1/2 right-4 -translate-y-1/2">
+        <div class="absolute top-1/2 right-4 -translate-y-1/2 scale-in-right">
             <div class="flex flex-col items-center justify-center gap-5">
                 <a href="#">
                     <Icon
