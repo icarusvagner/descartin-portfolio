@@ -21,6 +21,8 @@ pub fn ContactMeSection(
             let _ = right_contact_section.class_list().add_1("slide-out-top");
         }
 
+        leptos::logging::log!("Triggered");
+
         spawn_local(async {
             gloo_timers::future::sleep(std::time::Duration::from_millis(1100)).await;
         });

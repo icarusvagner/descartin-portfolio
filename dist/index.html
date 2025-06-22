@@ -18,8 +18,8 @@
     <!-- include support for `wasm-bindgen --weak-refs` - see: https://rustwasm.github.io/docs/wasm-bindgen/reference/weak-references.html -->
     
 <script type="module">
-import init, * as bindings from '/portfolio-f9c1815199d3b70.js';
-const wasm = await init({ module_or_path: '/portfolio-f9c1815199d3b70_bg.wasm' });
+import init, * as bindings from '/portfolio-cd548fd0dd5c909f.js';
+const wasm = await init({ module_or_path: '/portfolio-cd548fd0dd5c909f_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -31,6 +31,6 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
     <base href="/" />
     
     
-<link rel="modulepreload" href="/portfolio-f9c1815199d3b70.js" crossorigin="anonymous" integrity="sha384-6Roq2vo886evLyggLHEOxZNXo0KAPLAlhS2KicXUWLpZFYFWRH9XF/czW7Sr+Lni"><link rel="preload" href="/portfolio-f9c1815199d3b70_bg.wasm" crossorigin="anonymous" integrity="sha384-QCW1b5D5qNG5k9IeEbBGzRlw6sGQAMGR69IFuRBzU1yKaKfIcS3VPULYQZ38ghl0" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/portfolio-cd548fd0dd5c909f.js" crossorigin="anonymous" integrity="sha384-eK+nVQE7rcksULSzchmfBdjgAOGKnofLvFUJ7AWWjTaam7sVKUSD6+teEyZ7Fjyj"><link rel="preload" href="/portfolio-cd548fd0dd5c909f_bg.wasm" crossorigin="anonymous" integrity="sha384-8l38Ao+aeagtLDhgMMSZgHqQSaNK77L9tlAfqnOv5m3VG/xH0cS/V5NlFAZ0yhS2" as="fetch" type="application/wasm"></head>
 
 </html>
