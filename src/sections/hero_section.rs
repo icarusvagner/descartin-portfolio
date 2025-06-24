@@ -1,11 +1,16 @@
 use leptos::prelude::*;
 use leptos_icons::Icon;
 use leptos_router::components::A;
+use leptos_use::use_debounce_fn;
 
-use crate::components::svgs::InitialSVGLogo;
+use crate::{components::svgs::InitialSVGLogo, mcp::ModalContextProvider};
 
 #[component]
 pub fn HeroSection() -> impl IntoView {
+    let contact_context = ModalContextProvider::expect_context().contact_state;
+
+    let on_click = use_debounce_fn(move || contact_context.update(|val| *val = true), 500.0);
+
     view! {
         <section id="top" class="relative flex min-h-[580px] items-center bg-slate-900">
             <div class="absolute top-24 -translate-x-1/2 left-1/2 z-0 w-48 h-80">
@@ -22,9 +27,11 @@ pub fn HeroSection() -> impl IntoView {
                     <span class="absolute left-0 top-0 w-full h-full bg-neutral-300 z-10 scale-out-left"></span>
                 </h3>
 
-                <A
-                    href="#"
-                    attr:class="slide-in-elliptic-left-fwd group relative inline-flex h-12 w-40 items-center justify-center radient-pumpkin-bg"
+                <button
+                    on:click=move |_| {
+                        on_click();
+                    }
+                    class="slide-in-elliptic-left-fwd cursor-pointer group relative inline-flex h-12 w-40 items-center justify-center radient-pumpkin-bg"
                 >
                     <span class="absolute top-0 right-0 h-full w-0 radient-medium-blue-bg transition-all duration-500 ease-in-out group-hover:left-0 group-hover:right-auto group-hover:w-full"></span>
 
@@ -35,7 +42,7 @@ pub fn HeroSection() -> impl IntoView {
                         icon=icondata::CgArrowLongRight
                         attr:class="absolute top-2 -right-7 h-8 w-12 text-slate-100 transition-all duration-200 ease-initial group-hover:translate-x-1"
                     />
-                </A>
+                </button>
             </div>
 
             <div class="absolute bottom-0 left-1/2 -translate-x-1/2 group">

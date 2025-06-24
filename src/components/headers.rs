@@ -1,27 +1,25 @@
-use leptos::{prelude::*, reactive::spawn_local};
+use leptos::prelude::*;
 use leptos_icons::Icon;
-use leptos_meta::Body;
 use leptos_router::{components::A, hooks::use_navigate};
+use leptos_use::use_debounce_fn;
 
-use crate::{components::svgs::InitialSVGLogoTransparent, sections::ContactMeSection};
+use crate::{components::svgs::InitialSVGLogoTransparent, mcp::ModalContextProvider};
 
 #[component]
 pub fn CTHeader() -> impl IntoView {
-    let for_show =
-        use_context::<RwSignal<bool>>().expect("To have setter for show provider context");
-    let show_contact_me = RwSignal::new(false);
+    let modal_context = ModalContextProvider::expect_context();
 
-    let on_click = move |_| {
-        spawn_local(async {
-            gloo_timers::future::sleep(std::time::Duration::from_millis(600)).await;
-        });
+    let toggle_all_works = use_debounce_fn(
+        move || modal_context.show_state.update(|val| *val = true),
+        500.0,
+    );
 
-        show_contact_me.set(!show_contact_me.get());
-    };
+    let toggle_contact = use_debounce_fn(
+        move || modal_context.contact_state.update(|val| *val = true),
+        500.0,
+    );
 
     view! {
-        <Body class:overflow-hidden=move || show_contact_me.get() />
-
         <nav class="flex items-center px-3 sm:px-8 md:px-12 lg:px-24 absolute top-0 w-full py-2.5 z-[999]">
             <A href="/" attr:class="group">
                 <InitialSVGLogoTransparent class="h-12 w-24 text-neutral-500 group-hover:text-neutral-100 duration-400 ease-initial" />
@@ -31,32 +29,30 @@ pub fn CTHeader() -> impl IntoView {
 
             <div class="flex items-center gap-4">
                 <LinkTag title="Go back Home" link="/" icon=icondata::BsArrowLeft />
-                <LinkTag title="all works" on_click=move |_| for_show.update(|val| *val = true) />
-                <LinkTag title="contact" on_click />
+                <LinkTag
+                    title="all works"
+                    on_click=move |_| {
+                        toggle_all_works();
+                    }
+                />
+                <LinkTag
+                    title="contact"
+                    on_click=move |_| {
+                        toggle_contact();
+                    }
+                />
             </div>
         </nav>
-
-        <Show when=move || show_contact_me.get() fallback=|| ()>
-            <ContactMeSection on_click />
-        </Show>
     }
 }
 
 #[component]
 pub fn FirstHeader() -> impl IntoView {
-    let show_contact_me = RwSignal::new(false);
+    let show_context = ModalContextProvider::expect_context().contact_state;
 
-    let on_click = move |_| {
-        spawn_local(async {
-            gloo_timers::future::sleep(std::time::Duration::from_millis(600)).await;
-        });
-
-        show_contact_me.set(!show_contact_me.get());
-    };
+    let toggle_show = use_debounce_fn(move || show_context.update(|val| *val = true), 500.0);
 
     view! {
-        <Body class:overflow-hidden=move || show_contact_me.get() />
-
         <nav class="flex items-center px-3 sm:px-8 md:px-12 lg:px-24 absolute top-0 w-full py-2.5 z-[99]">
             <A href="/" attr:class="group">
                 <InitialSVGLogoTransparent class="h-12 w-24 text-neutral-500 group-hover:text-neutral-100 duration-400 ease-initial" />
@@ -67,13 +63,14 @@ pub fn FirstHeader() -> impl IntoView {
             <div class="flex items-center gap-4">
                 <LinkTag title="case studies" link="#case_studies" />
                 // <LinkTag title="experience" link="#" />
-                <LinkTag title="contact" on_click />
+                <LinkTag
+                    title="contact"
+                    on_click=move |_| {
+                        toggle_show();
+                    }
+                />
             </div>
         </nav>
-
-        <Show when=move || show_contact_me.get() fallback=|| ()>
-            <ContactMeSection on_click />
-        </Show>
     }
 }
 

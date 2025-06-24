@@ -4,12 +4,34 @@ mod goldenyears;
 mod pixl_view;
 
 use leptos::prelude::*;
+use leptos_meta::Body;
 use leptos_router::hooks::use_params_map;
 
-use crate::views::case_studies::{
-    castlebyte_view::CastlebyteTechsolutionsView, cta_view::CebuToursAdventuresView,
-    goldenyears::GoldenYearsView, pixl_view::Pixl8MultimediaView,
+use crate::{
+    mcp::{all_works::AllWorksComponent, contact_me::ContactMeSection, ModalContextProvider},
+    views::case_studies::{
+        castlebyte_view::CastlebyteTechsolutionsView, cta_view::CebuToursAdventuresView,
+        goldenyears::GoldenYearsView, pixl_view::Pixl8MultimediaView,
+    },
 };
+
+#[component]
+pub fn ShowModalContext() -> impl IntoView {
+    let modal_context = ModalContextProvider::expect_context();
+
+    view! {
+        <Body class:overflow-hidden=move || {
+            modal_context.show_state.get() || modal_context.contact_state.get()
+        } />
+
+        <Show when=modal_context.show_state fallback=|| ()>
+            <AllWorksComponent />
+        </Show>
+        <Show when=modal_context.contact_state fallback=|| ()>
+            <ContactMeSection />
+        </Show>
+    }
+}
 
 #[component]
 pub fn CaseStudiesView() -> impl IntoView {
@@ -17,7 +39,7 @@ pub fn CaseStudiesView() -> impl IntoView {
 
     let case = Memo::new(move |_| mod_param.read().get("case").unwrap_or_default());
 
-    match case.get().as_ref() {
+    move || match case.get().as_ref() {
         "cebu-tours-adventures" => view! { <CebuToursAdventuresView /> }.into_any(),
         "pixl8multimedia" => view! { <Pixl8MultimediaView /> }.into_any(),
         "goldenyears" => view! { <GoldenYearsView /> }.into_any(),
