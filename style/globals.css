@@ -43,14 +43,13 @@
     }
 
     .main-hero-title {
-        @apply font-oswald font-bold relative;
+        @apply font-oswald font-bold relative text-[3.9975843648em] xl:text-[4.9975843648em];
         margin-bottom: .0938066507em;
-        font-size: 3.9975843648em;
         line-height: .9380665066;
     }
 
     .contact-about {
-        @apply mb-[.2652050919em] text-[1.414em] font-mono font-bold;
+        @apply mb-[.2652050919em] text-[1.414em] xl:text-[3.414em] font-mono font-bold;
         line-height: 1.3260254597;
     }
 }

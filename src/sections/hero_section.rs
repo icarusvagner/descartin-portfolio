@@ -12,7 +12,10 @@ pub fn HeroSection() -> impl IntoView {
     let on_click = use_debounce_fn(move || contact_context.update(|val| *val = true), 500.0);
 
     view! {
-        <section id="top" class="relative flex min-h-[580px] items-center bg-slate-900">
+        <section
+            id="top"
+            class="relative flex min-h-[580px] xl:min-h-[650px] items-center bg-slate-900"
+        >
             <div class="absolute top-24 -translate-x-1/2 left-1/2 z-0 w-48 h-80">
                 <InitialSVGLogo class="h-full w-full" />
             </div>
@@ -22,7 +25,7 @@ pub fn HeroSection() -> impl IntoView {
                     "Lance Phillip Descartin"
                     <span class="absolute right-0 top-0 w-full h-full bg-neutral-300 z-10 scale-out-right"></span>
                 </h1>
-                <h3 class="text-left font-lora font-extrabold tracking-wider text-slate-400 italic relative">
+                <h3 class="text-left font-lora font-extrabold tracking-wider text-slate-400 italic relative xl:text-xl">
                     "Full-stack Software Developer"
                     <span class="absolute left-0 top-0 w-full h-full bg-neutral-300 z-10 scale-out-left"></span>
                 </h3>

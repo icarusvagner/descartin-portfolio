@@ -3,7 +3,7 @@
 
 <head>
     <!-- If using Tailwind with Leptos CSR, see https://trunkrs.dev/assets/#tailwind instead-->
-    <link rel="stylesheet" href="/globals-27a496cdfdded4b8.css" integrity="sha384-AJxY7jcxgbm+05Lzt5p4jDXD8O3Mc/MmpTZeFXBKbVCFX0e1SEnm3NGbEtPu5xve"/>
+    <link rel="stylesheet" href="/globals-2934de486f9f957c.css" integrity="sha384-/CPl21moieHQ+It45d7A3lJzkk+F3U87TuRUWL/cpM48o95ZocK4o6X40ggXQVAA"/>
     <link rel="stylesheet" href="/styles-ab7bb683467150e1.css" integrity="sha384-4GvsCpdiEkPiriZM9oq2FxnBcPDbLy2MFtqAzQWr2aW5XOv7+BG68IMDKen1f+iW"/>
     <link rel="stylesheet" href="/animations-477a73a2bf41e15.css" integrity="sha384-a6ahfibaNDERt0by+okyfFoPU5WgBwyt3D6Jp2aj1WiyHqeqq8uOHgdBgw99Nm9R"/>
 
@@ -15,8 +15,8 @@
     <!-- include support for `wasm-bindgen --weak-refs` - see: https://rustwasm.github.io/docs/wasm-bindgen/reference/weak-references.html -->
     
 <script type="module">
-import init, * as bindings from '/portfolio-8fb877772fd115ba.js';
-const wasm = await init({ module_or_path: '/portfolio-8fb877772fd115ba_bg.wasm' });
+import init, * as bindings from '/portfolio-564cfe6e94e57627.js';
+const wasm = await init({ module_or_path: '/portfolio-564cfe6e94e57627_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -28,6 +28,6 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
     <base href="/" />
     
     
-<link rel="modulepreload" href="/portfolio-8fb877772fd115ba.js" crossorigin="anonymous" integrity="sha384-1Q6LininRa2fJCeMDY2o9jRecm6jsbaHTjRURoHGfT/Pbu95fQmdnTidRpHh+8Qz"><link rel="preload" href="/portfolio-8fb877772fd115ba_bg.wasm" crossorigin="anonymous" integrity="sha384-/qDlLLFvFhQ9dQEoTWRD5rnplNMA0aKiI1yadWCGyqSp6OvIWFrH0HI3tc2xRGDq" as="fetch" type="application/wasm"></head>
+<link rel="modulepreload" href="/portfolio-564cfe6e94e57627.js" crossorigin="anonymous" integrity="sha384-GKENL9wv5ZQOYg2ttaz8Y1onDQJWy1z3OjO2MFGqXZklgl/iSGgbB5IUY8YjVrh4"><link rel="preload" href="/portfolio-564cfe6e94e57627_bg.wasm" crossorigin="anonymous" integrity="sha384-0VdN38ZCDnQQo2PeHQfO4alV5VPKDSX2Dr7NAf6Hh9FodBJ+N5/frHz2N5P+2XDt" as="fetch" type="application/wasm"></head>
 
 </html>

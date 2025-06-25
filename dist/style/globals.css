@@ -1,4 +1,4 @@
-/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
@@ -1328,6 +1328,33 @@
       line-height: var(--tw-leading, var(--text-9xl--line-height));
     }
   }
+  .xl\:min-h-\[650px\] {
+    @media (width >= 80rem) {
+      min-height: 650px;
+    }
+  }
+  .xl\:text-4xl {
+    @media (width >= 80rem) {
+      font-size: var(--text-4xl);
+      line-height: var(--tw-leading, var(--text-4xl--line-height));
+    }
+  }
+  .xl\:text-xl {
+    @media (width >= 80rem) {
+      font-size: var(--text-xl);
+      line-height: var(--tw-leading, var(--text-xl--line-height));
+    }
+  }
+  .xl\:text-\[\.987em\] {
+    @media (width >= 80rem) {
+      font-size: .987em;
+    }
+  }
+  .xl\:text-\[1\.3260254597em\] {
+    @media (width >= 80rem) {
+      font-size: 1.3260254597em;
+    }
+  }
   .dark\:bg-slate-900 {
     @media (prefers-color-scheme: dark) {
       background-color: var(--color-slate-900);
@@ -1362,10 +1389,13 @@
   .main-hero-title {
     position: relative;
     font-family: var(--font-oswald);
+    font-size: 3.9975843648em;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+    @media (width >= 80rem) {
+      font-size: 4.9975843648em;
+    }
     margin-bottom: .0938066507em;
-    font-size: 3.9975843648em;
     line-height: .9380665066;
   }
   .contact-about {
@@ -1374,6 +1404,9 @@
     font-size: 1.414em;
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
+    @media (width >= 80rem) {
+      font-size: 3.414em;
+    }
     line-height: 1.3260254597;
   }
 }

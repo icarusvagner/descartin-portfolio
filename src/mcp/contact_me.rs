@@ -40,19 +40,19 @@ pub fn ContactMeSection() -> impl IntoView {
                     </div>
                     <div class="relative z-20 flex flex-col justify-center gap-0.5">
                         <h1 class="contact-about">"About Me."</h1>
-                        <h4 class="text-[.75em] font-normal text-neutral-600">
+                        <h4 class="text-[.75em] xl:text-[.987em] font-normal text-neutral-600">
                             "Full-Stack Software Developer"
                         </h4>
-                        <p class="my-6 text-[.875em] leading-relaxed text-neutral-700">
+                        <p class="my-6 text-[.875em] xl:text-[1.3260254597em] leading-relaxed text-neutral-700">
                             "I'm "<span class="font-semibold">"Lance Phillip Descartin"</span>
-                            ", a 25-year-old Filipino"
+                            ", a 25-year-old Filipino "
                             <span class="text-pumpkin">
-                                "Freelancer and Full-Stack Software Developer."
+                                "Freelancer and Full-Stack Software Developer. "
                             </span>
-                            "I specialize in building clean, scalable, and user-focused digital solutions from intuitive frontend interfaces to high-performance backend systems. With every line of code, I aim to bring ideas to life while delivering"
+                            "I specialize in building clean, scalable, and user-focused digital solutions from intuitive frontend interfaces to high-performance backend systems. With every line of code, I aim to bring ideas to life while delivering "
                             <span class="text-pumpkin">"real-world impact and value."</span>
                         </p>
-                        <blockquote class="text-md mb-6 border-l-4 border-indigo-500 pl-4 text-gray-500 italic">
+                        <blockquote class="text-md xl:text-xl mb-6 border-l-4 border-indigo-500 pl-4 text-gray-500 italic">
                             r#""Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.""#
                             <br />
                             <span class="mt-2 inline-block text-sm font-medium text-indigo-700">
@@ -125,7 +125,7 @@ pub fn ContactMeSection() -> impl IntoView {
                     )
                 }>
                     <div class="flex items-center justify-between">
-                        <h1 class="text-2xl font-bold text-stone-100">"Let's talk."</h1>
+                        <h1 class="text-2xl xl:text-4xl font-bold text-stone-100">"Let's talk."</h1>
                         <button
                             on:click=on_click
                             class="group relative inline-flex h-10 w-10 cursor-pointer"
@@ -136,7 +136,7 @@ pub fn ContactMeSection() -> impl IntoView {
                             <div class="absolute top-1/2 left-1/2 h-[3px] w-10 origin-center -translate-x-1/2 -translate-y-1/2 -rotate-45 bg-stone-100 transition-all duration-300 ease-in-out group-hover:rotate-[135deg] group-hover:linear-pumpkin group-hover:bg-pumpkin"></div>
                         </button>
                     </div>
-                    <p class="mb-8 text-xs text-gray-600 dark:text-gray-300">
+                    <p class="mb-8 text-xs xl:text-xl text-gray-600 dark:text-gray-300">
                         "New project, freelance inquiry, collaboration, or even a coffee."
                     </p>
 
