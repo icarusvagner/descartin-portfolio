@@ -43,7 +43,7 @@ pub fn ContactMeSection() -> impl IntoView {
                         <h4 class="text-[.75em] xl:text-[.987em] font-normal text-neutral-600">
                             "Full-Stack Software Developer"
                         </h4>
-                        <p class="my-6 text-[.875em] xl:text-[1.3260254597em] leading-relaxed text-neutral-700">
+                        <p class="my-6 text-[.875em] xl:text-[.99875em] leading-relaxed text-neutral-700">
                             "I'm "<span class="font-semibold">"Lance Phillip Descartin"</span>
                             ", a 25-year-old Filipino "
                             <span class="text-pumpkin">
@@ -52,7 +52,7 @@ pub fn ContactMeSection() -> impl IntoView {
                             "I specialize in building clean, scalable, and user-focused digital solutions from intuitive frontend interfaces to high-performance backend systems. With every line of code, I aim to bring ideas to life while delivering "
                             <span class="text-pumpkin">"real-world impact and value."</span>
                         </p>
-                        <blockquote class="text-md xl:text-xl mb-6 border-l-4 border-indigo-500 pl-4 text-gray-500 italic">
+                        <blockquote class="text-md xl:text-lg mb-6 border-l-4 border-indigo-500 pl-4 text-gray-500 italic">
                             r#""Whatever you do, work at it with all your heart, as working for the Lord, not for human masters.""#
                             <br />
                             <span class="mt-2 inline-block text-sm font-medium text-indigo-700">
@@ -180,7 +180,7 @@ pub fn ContactMeSection() -> impl IntoView {
                         </label>
                     </div>
 
-                    <button class="flex self-start w-44 h-12 text-center radient-pumpkin-bg text-stone-100 items-center justify-center">
+                    <button class="flex cursor-pointer self-start w-44 h-12 text-center radient-pumpkin-bg text-stone-100 items-center justify-center">
                         "Send Message"
                     </button>
                 </div>

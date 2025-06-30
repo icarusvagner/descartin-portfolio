@@ -14,14 +14,14 @@ pub fn HeroSection() -> impl IntoView {
     view! {
         <section
             id="top"
-            class="relative flex min-h-[580px] xl:min-h-[650px] items-center bg-slate-900"
+            class="relative flex min-h-[580px] xl:min-h-[650px] overflow-hidden items-center bg-slate-100 dark:bg-slate-900"
         >
             <div class="absolute top-24 -translate-x-1/2 left-1/2 z-0 w-48 h-80">
-                <InitialSVGLogo class="h-full w-full" />
+                <InitialSVGLogo class="h-full w-full dark:opacity-100 opacity-75" />
             </div>
 
             <div class="z-10 flex flex-col gap-10 px-10 sm:px-18 md:px-36 lg:px-44">
-                <h1 class="main-hero-title text-left font-black tracking-wide text-slate-300 relative">
+                <h1 class="main-hero-title text-left font-black tracking-wide text-stone-800 dark:text-slate-300 relative">
                     "Lance Phillip Descartin"
                     <span class="absolute right-0 top-0 w-full h-full bg-neutral-300 z-10 scale-out-right"></span>
                 </h1>
@@ -43,18 +43,18 @@ pub fn HeroSection() -> impl IntoView {
                     </span>
                     <Icon
                         icon=icondata::CgArrowLongRight
-                        attr:class="absolute top-2 -right-7 h-8 w-12 text-slate-100 transition-all duration-200 ease-initial group-hover:translate-x-1"
+                        attr:class="absolute top-2 -right-7 h-8 w-12 text-slate-400 dark:text-slate-100 transition-all duration-200 ease-initial group-hover:translate-x-1"
                     />
                 </button>
             </div>
 
             <div class="absolute bottom-0 left-1/2 -translate-x-1/2 group">
                 <A href="#case_studies" attr:class="relative flex flex-col items-center">
-                    <h1 class="text-sm font-medium text-slate-50">"Works"</h1>
-                    <div class="mt-2 h-10 w-0.5 bg-slate-500 group-hover:bg-slate-200 duration-300 ease-initial"></div>
+                    <h1 class="text-sm font-medium text-neutral-600 dark:text-slate-50">"Works"</h1>
+                    <div class="mt-2 h-10 w-0.5 bg-slate-300 dark:bg-slate-500 group-hover:dark:bg-slate-200 group-hover:bg-slate-500 duration-300 ease-initial"></div>
                     <Icon
                         icon=icondata::BsChevronCompactDown
-                        attr:class="h-6 w-6 text-slate-200 absolute group-hover:-bottom-2 -bottom-5 duration-300 ease-initial transition-all left-1/2 -translate-x-1/2"
+                        attr:class="h-6 w-6 text-slate-500 dark:text-slate-200 absolute group-hover:-bottom-2 -bottom-5 duration-300 ease-initial transition-all left-1/2 -translate-x-1/2"
                     />
                 </A>
             </div>

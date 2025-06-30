@@ -5,7 +5,7 @@ pub fn CebuToursAdventuresView() -> impl IntoView {
     view! {
         <section
             class="min-h-[580px] bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center gap-5"
-            style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.7) 100%), url('/public/assets/cebu-tours-adventures.png')"
+            style="background-image: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.5) 100%), url('/public/assets/cebu-tours-adventures.png')"
         >
             <div class="flex flex-col gap-1 flex-1 items-center justify-center">
                 <h1 class="text-[3.9975843648em] font-extrabold text-neutral-100 capitalize text-center">

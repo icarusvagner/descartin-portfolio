@@ -19,6 +19,8 @@
     --caribbean-current-hsl: hsla(188, 100%, 27%, 1);
 }
 
+@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
+
 @theme {
     --font-poppins: var(--poppins);
     --font-lora: var(--lora);

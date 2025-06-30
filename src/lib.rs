@@ -11,7 +11,7 @@ pub mod sections;
 pub mod views;
 
 use leptos::prelude::*;
-use leptos_meta::{provide_meta_context, Html, Meta, Title};
+use leptos_meta::{provide_meta_context, Meta, Title};
 use routes::AppRoutes;
 
 use crate::{mcp::ContextProvider, views::case_studies::ShowModalContext};
@@ -24,10 +24,9 @@ pub fn App() -> impl IntoView {
         <Meta charset="UTF-8" />
         <Meta name="viewport" content="width=device-width, initial-scale=1" />
         <Title text="Lance Phillip Descartin - Interactive Frontend" />
-        <Html {..} class="scroll-smooth" />
 
         <ContextProvider>
-            <main class="min-h-screen">
+            <main class="min-h-screen dark:bg-slate-800 bg-slate-50 text-neutral-900 dark:text-neutral-50">
                 <AppRoutes />
             </main>
 

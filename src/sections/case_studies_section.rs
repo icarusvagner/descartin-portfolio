@@ -5,10 +5,10 @@ use leptos_icons::Icon;
 pub fn CaseStudiesSection() -> impl IntoView {
     view! {
         <section id="case_studies" class="py-5 pt-22 min-h-screen relative overflow-hidden">
-            <h1 class="text-center text-xl text-neutral-400 font-black uppercase">
+            <h1 class="text-center text-xl text-neutral-400 dark:text-neutral-500 font-black uppercase">
                 "case studies"
             </h1>
-            <h3 class="text-4xl capitalize font-black tracking-wide text-neutral-800 text-center mt-4">
+            <h3 class="text-4xl capitalize font-black tracking-wide text-neutral-800 dark:text-neutral-50 text-center mt-4">
                 "latest works"
             </h3>
 
