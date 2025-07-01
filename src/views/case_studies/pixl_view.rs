@@ -4,7 +4,7 @@ use leptos::prelude::*;
 pub fn Pixl8MultimediaView() -> impl IntoView {
     view! {
         <section
-            class="min-h-[580px] bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center gap-5"
+            class="min-h-[580px] xl:min-h-[53rem] bg-center bg-cover bg-no-repeat flex flex-col items-center justify-center gap-5"
             style="background-image: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.7) 100%), url('/public/assets/pixl8media.jpeg')"
         >
             <div class="flex flex-col gap-1 flex-1 items-center justify-center">
@@ -32,7 +32,27 @@ pub fn Pixl8MultimediaView() -> impl IntoView {
             </div>
         </section>
 
-        <section class="my-24 min-h-screen">
+        <section class="mb-24 min-h-screen">
+            <section class="relative flex py-24 w-full flex-col items-center justify-center bg-[#011741]">
+                <div class="flex max-w-xl flex-col items-center justify-center gap-8">
+                    <h1 class="text-7xl font-black text-stone-100 capitalize">"the project"</h1>
+                    <p class="text-center text-stone-200">
+                        "Pixl8Media functions as a platform which turns stories into genuine visual representations that outstrip their textual manifestation. Authors who work for film production must develop their unique voice which requires worldwide distribution. Build a place within our team to assist development of narratives beyond mainstream standards and create meaningful connections with audience."
+                    </p>
+                    <a
+                        href="https://pixl8media.com"
+                        class="text-stone-100 border py-2 px-5 hover:bg-stone-100 hover:text-stone-800 duration-300 transition-all ease-in-out hover:border-stone-100 text-xl font-medium"
+                    >
+                        "Visit Website"
+                    </a>
+                </div>
+                <div class="absolute bottom-0 left-1/2 -translate-x-1/2 z-0">
+                    <h1 class="text-7xl font-playfair font-black tracking-widest text-stone-100/30">
+                        "Pixl8Multimedia"
+                    </h1>
+                </div>
+            </section>
+
             <section class="relative overflow-hidden">
                 <div class="mx-auto grid h-full grid-cols-1 gap-12 px-3 py-12 lg:max-w-7xl lg:grid-cols-2 lg:px-0 xl:max-w-6xl">
                     <div class="flex flex-col gap-2">

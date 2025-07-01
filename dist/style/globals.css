@@ -1,6 +1,7 @@
 /*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -111,6 +112,8 @@
     --font-playfair: "Playfair Display", serif;
     --font-roboto: "Roboto", sans-serif;
     --font-montserrat: "Montserrat", sans-serif;
+    --font-cinzel: "Cinzel", serif;
+    --font-garamond: "EB Garamond", serif;
     --color-pumpkin: var(--pumpkin);
     --color-medium-blue: var(--medium-blue);
   }
@@ -324,6 +327,9 @@
   .right-4 {
     right: calc(var(--spacing) * 4);
   }
+  .right-10 {
+    right: calc(var(--spacing) * 10);
+  }
   .-bottom-5 {
     bottom: calc(var(--spacing) * -5);
   }
@@ -350,6 +356,9 @@
   }
   .left-3 {
     left: calc(var(--spacing) * 3);
+  }
+  .left-10 {
+    left: calc(var(--spacing) * 10);
   }
   .left-40 {
     left: calc(var(--spacing) * 40);
@@ -395,9 +404,6 @@
   }
   .my-12 {
     margin-block: calc(var(--spacing) * 12);
-  }
-  .my-24 {
-    margin-block: calc(var(--spacing) * 24);
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
@@ -794,6 +800,12 @@
   .bg-\[\#2F71FF\] {
     background-color: #2F71FF;
   }
+  .bg-\[\#005D99\] {
+    background-color: #005D99;
+  }
+  .bg-\[\#6B5B2D\] {
+    background-color: #6B5B2D;
+  }
   .bg-\[\#8DB0FA\] {
     background-color: #8DB0FA;
   }
@@ -808,6 +820,15 @@
   }
   .bg-\[\#013299\] {
     background-color: #013299;
+  }
+  .bg-\[\#A37C20\] {
+    background-color: #A37C20;
+  }
+  .bg-\[\#F5E6C8\] {
+    background-color: #F5E6C8;
+  }
+  .bg-\[\#FAFAFA\] {
+    background-color: #FAFAFA;
   }
   .bg-\[\#dff3fc\] {
     background-color: #dff3fc;
@@ -845,9 +866,6 @@
   .bg-pumpkin {
     background-color: var(--color-pumpkin);
   }
-  .bg-sky-600 {
-    background-color: var(--color-sky-600);
-  }
   .bg-slate-50 {
     background-color: var(--color-slate-50);
   }
@@ -878,6 +896,15 @@
   }
   .bg-\[url\(\'\/public\/assets\/works\/cta\/img-03\.png\'\)\] {
     background-image: url('/public/assets/works/cta/img-03.png');
+  }
+  .bg-\[url\(\'\/public\/assets\/works\/goldenyears\/img-01\.png\'\)\] {
+    background-image: url('/public/assets/works/goldenyears/img-01.png');
+  }
+  .bg-\[url\(\'\/public\/assets\/works\/goldenyears\/img-02\.png\'\)\] {
+    background-image: url('/public/assets/works/goldenyears/img-02.png');
+  }
+  .bg-\[url\(\'\/public\/assets\/works\/goldenyears\/img-03\.png\'\)\] {
+    background-image: url('/public/assets/works/goldenyears/img-03.png');
   }
   .bg-\[url\(\'\/public\/assets\/works\/pixl8\/img-01\.png\'\)\] {
     background-image: url('/public/assets/works/pixl8/img-01.png');
@@ -996,6 +1023,12 @@
   }
   .text-right {
     text-align: right;
+  }
+  .font-cinzel {
+    font-family: var(--font-cinzel);
+  }
+  .font-garamond {
+    font-family: var(--font-garamond);
   }
   .font-lora {
     font-family: var(--font-lora);
@@ -1204,6 +1237,12 @@
   }
   .text-stone-100 {
     color: var(--color-stone-100);
+  }
+  .text-stone-100\/30 {
+    color: color-mix(in srgb, oklch(97% 0.001 106.424) 30%, transparent);
+    @supports (color: color-mix(in lab, red, red)) {
+      color: color-mix(in oklab, var(--color-stone-100) 30%, transparent);
+    }
   }
   .text-stone-200 {
     color: var(--color-stone-200);
@@ -1603,6 +1642,11 @@
       grid-template-columns: repeat(4, minmax(0, 1fr));
     }
   }
+  .lg\:grid-cols-5 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+  }
   .lg\:px-0 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 0);
@@ -1627,11 +1671,6 @@
   .xl\:min-h-\[53rem\] {
     @media (width >= 80rem) {
       min-height: 53rem;
-    }
-  }
-  .xl\:min-h-\[650px\] {
-    @media (width >= 80rem) {
-      min-height: 650px;
     }
   }
   .xl\:max-w-6xl {

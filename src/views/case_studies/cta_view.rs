@@ -19,7 +19,7 @@ pub fn CebuToursAdventuresView() -> impl IntoView {
             <div class="flex items-center justify-between pb-10 w-full px-12">
                 <div class="flex text-[.75em] tracking-[2px] font-bold items-center gap-2.5 uppercase">
                     <h1 class="text-sky-400">"role"</h1>
-                    <h3 class="text-neutral-100">"front-end developer"</h3>
+                    <h3 class="text-neutral-100">"full-stack developer"</h3>
                 </div>
                 <div class="flex text-[.75em] tracking-[2px] font-bold items-center gap-2.5 uppercase">
                     <h1 class="text-sky-400">"context"</h1>
@@ -34,7 +34,7 @@ pub fn CebuToursAdventuresView() -> impl IntoView {
 
         <section class="mb-24 min-h-screen">
 
-            <section class="flex py-24 w-full flex-col items-center justify-center bg-sky-600">
+            <section class="relative flex py-24 w-full flex-col items-center justify-center bg-[#0094d9]">
                 <div class="flex max-w-xl flex-col items-center justify-center gap-8">
                     <h1 class="text-7xl font-black text-stone-100 capitalize">"the project"</h1>
                     <p class="text-center text-stone-200">
@@ -46,6 +46,12 @@ pub fn CebuToursAdventuresView() -> impl IntoView {
                     >
                         "Visit Website"
                     </a>
+                </div>
+
+                <div class="absolute bottom-0 left-10 z-0">
+                    <h1 class="text-7xl font-montserrat font-black tracking-widest text-stone-100/30">
+                        "Cebu Tours & Adventures"
+                    </h1>
                 </div>
             </section>
 

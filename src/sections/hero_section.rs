@@ -14,7 +14,7 @@ pub fn HeroSection() -> impl IntoView {
     view! {
         <section
             id="top"
-            class="relative flex min-h-[580px] xl:min-h-[650px] overflow-hidden items-center bg-slate-100 dark:bg-slate-900"
+            class="relative flex min-h-[580px] xl:min-h-[53rem] overflow-hidden items-center bg-slate-100 dark:bg-slate-900"
         >
             <div class="absolute top-24 -translate-x-1/2 left-1/2 z-0 w-48 h-80">
                 <InitialSVGLogo class="h-full w-full dark:opacity-100 opacity-75" />
