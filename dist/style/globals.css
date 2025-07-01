@@ -1,5 +1,6 @@
-/*! tailwindcss v4.1.8 | MIT License | https://tailwindcss.com */
+/*! tailwindcss v4.1.10 | MIT License | https://tailwindcss.com */
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
@@ -12,6 +13,7 @@
     --color-teal-600: oklch(60% 0.118 184.704);
     --color-cyan-950: oklch(30.2% 0.056 229.695);
     --color-sky-400: oklch(74.6% 0.16 232.661);
+    --color-sky-600: oklch(58.8% 0.158 241.966);
     --color-sky-700: oklch(50% 0.134 242.749);
     --color-blue-500: oklch(62.3% 0.214 259.815);
     --color-blue-600: oklch(54.6% 0.245 262.881);
@@ -48,14 +50,17 @@
     --color-neutral-900: oklch(20.5% 0 0);
     --color-stone-50: oklch(98.5% 0.001 106.423);
     --color-stone-100: oklch(97% 0.001 106.424);
+    --color-stone-200: oklch(92.3% 0.003 48.717);
+    --color-stone-300: oklch(86.9% 0.005 56.366);
     --color-stone-500: oklch(55.3% 0.013 58.071);
     --color-stone-600: oklch(44.4% 0.011 73.639);
     --color-stone-700: oklch(37.4% 0.01 67.558);
     --color-stone-800: oklch(26.8% 0.007 34.298);
-    --color-black: #000;
+    --color-stone-900: oklch(21.6% 0.006 56.043);
     --color-white: #fff;
     --spacing: 0.25rem;
     --container-xl: 36rem;
+    --container-2xl: 42rem;
     --container-4xl: 56rem;
     --container-6xl: 72rem;
     --container-7xl: 80rem;
@@ -79,6 +84,8 @@
     --text-5xl--line-height: 1;
     --text-6xl: 3.75rem;
     --text-6xl--line-height: 1;
+    --text-7xl: 4.5rem;
+    --text-7xl--line-height: 1;
     --text-9xl: 8rem;
     --text-9xl--line-height: 1;
     --font-weight-normal: 400;
@@ -99,10 +106,11 @@
     --default-transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
-    --font-lora: var(--lora);
+    --font-lora: "Lora", serif;
     --font-oswald: var(--oswald);
     --font-playfair: "Playfair Display", serif;
     --font-roboto: "Roboto", sans-serif;
+    --font-montserrat: "Montserrat", sans-serif;
     --color-pumpkin: var(--pumpkin);
     --color-medium-blue: var(--medium-blue);
   }
@@ -325,6 +333,9 @@
   .bottom-3 {
     bottom: calc(var(--spacing) * 3);
   }
+  .bottom-10 {
+    bottom: calc(var(--spacing) * 10);
+  }
   .-left-3 {
     left: calc(var(--spacing) * -3);
   }
@@ -384,6 +395,9 @@
   }
   .my-12 {
     margin-block: calc(var(--spacing) * 12);
+  }
+  .my-24 {
+    margin-block: calc(var(--spacing) * 24);
   }
   .mt-2 {
     margin-top: calc(var(--spacing) * 2);
@@ -475,6 +489,9 @@
   .h-\[3px\] {
     height: 3px;
   }
+  .h-\[30rem\] {
+    height: 30rem;
+  }
   .h-\[400px\] {
     height: 400px;
   }
@@ -489,6 +506,9 @@
   }
   .h-full {
     height: 100%;
+  }
+  .h-screen {
+    height: 100vh;
   }
   .min-h-\[580px\] {
     min-height: 580px;
@@ -510,6 +530,9 @@
   }
   .w-2 {
     width: calc(var(--spacing) * 2);
+  }
+  .w-2xl {
+    width: var(--container-2xl);
   }
   .w-3 {
     width: calc(var(--spacing) * 3);
@@ -765,17 +788,29 @@
   .border-teal-600 {
     border-color: var(--color-teal-600);
   }
+  .bg-\[\#1b468f\] {
+    background-color: #1b468f;
+  }
   .bg-\[\#2F71FF\] {
     background-color: #2F71FF;
   }
   .bg-\[\#8DB0FA\] {
     background-color: #8DB0FA;
   }
+  .bg-\[\#9CCFF0\] {
+    background-color: #9CCFF0;
+  }
+  .bg-\[\#0094d9\] {
+    background-color: #0094d9;
+  }
   .bg-\[\#011741\] {
     background-color: #011741;
   }
   .bg-\[\#013299\] {
     background-color: #013299;
+  }
+  .bg-\[\#dff3fc\] {
+    background-color: #dff3fc;
   }
   .bg-cyan-950 {
     background-color: var(--color-cyan-950);
@@ -810,6 +845,9 @@
   .bg-pumpkin {
     background-color: var(--color-pumpkin);
   }
+  .bg-sky-600 {
+    background-color: var(--color-sky-600);
+  }
   .bg-slate-50 {
     background-color: var(--color-slate-50);
   }
@@ -832,6 +870,15 @@
     --tw-gradient-position: to right in oklab;
     background-image: linear-gradient(var(--tw-gradient-stops));
   }
+  .bg-\[url\(\'\/public\/assets\/works\/cta\/img-01\.png\'\)\] {
+    background-image: url('/public/assets/works/cta/img-01.png');
+  }
+  .bg-\[url\(\'\/public\/assets\/works\/cta\/img-02\.png\'\)\] {
+    background-image: url('/public/assets/works/cta/img-02.png');
+  }
+  .bg-\[url\(\'\/public\/assets\/works\/cta\/img-03\.png\'\)\] {
+    background-image: url('/public/assets/works/cta/img-03.png');
+  }
   .bg-\[url\(\'\/public\/assets\/works\/pixl8\/img-01\.png\'\)\] {
     background-image: url('/public/assets/works/pixl8/img-01.png');
   }
@@ -850,6 +897,9 @@
   .to-pink-500 {
     --tw-gradient-to: var(--color-pink-500);
     --tw-gradient-stops: var(--tw-gradient-via-stops, var(--tw-gradient-position), var(--tw-gradient-from) var(--tw-gradient-from-position), var(--tw-gradient-to) var(--tw-gradient-to-position));
+  }
+  .bg-contain {
+    background-size: contain;
   }
   .bg-cover {
     background-size: cover;
@@ -926,6 +976,9 @@
   .py-32 {
     padding-block: calc(var(--spacing) * 32);
   }
+  .pt-20 {
+    padding-top: calc(var(--spacing) * 20);
+  }
   .pt-22 {
     padding-top: calc(var(--spacing) * 22);
   }
@@ -946,6 +999,9 @@
   }
   .font-lora {
     font-family: var(--font-lora);
+  }
+  .font-montserrat {
+    font-family: var(--font-montserrat);
   }
   .font-oswald {
     font-family: var(--font-oswald);
@@ -975,6 +1031,10 @@
   .text-6xl {
     font-size: var(--text-6xl);
     line-height: var(--tw-leading, var(--text-6xl--line-height));
+  }
+  .text-7xl {
+    font-size: var(--text-7xl);
+    line-height: var(--tw-leading, var(--text-7xl--line-height));
   }
   .text-9xl {
     font-size: var(--text-9xl);
@@ -1076,12 +1136,6 @@
     --tw-tracking: var(--tracking-widest);
     letter-spacing: var(--tracking-widest);
   }
-  .text-\[\#8DB0FA\] {
-    color: #8DB0FA;
-  }
-  .text-black {
-    color: var(--color-black);
-  }
   .text-gray-500 {
     color: var(--color-gray-500);
   }
@@ -1136,6 +1190,9 @@
   .text-sky-400 {
     color: var(--color-sky-400);
   }
+  .text-sky-600 {
+    color: var(--color-sky-600);
+  }
   .text-slate-100 {
     color: var(--color-slate-100);
   }
@@ -1148,6 +1205,9 @@
   .text-stone-100 {
     color: var(--color-stone-100);
   }
+  .text-stone-200 {
+    color: var(--color-stone-200);
+  }
   .text-stone-500 {
     color: var(--color-stone-500);
   }
@@ -1156,6 +1216,9 @@
   }
   .text-stone-800 {
     color: var(--color-stone-800);
+  }
+  .text-stone-900 {
+    color: var(--color-stone-900);
   }
   .text-teal-600 {
     color: var(--color-teal-600);
@@ -1343,10 +1406,31 @@
       }
     }
   }
+  .group-hover\:text-neutral-300 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-neutral-300);
+      }
+    }
+  }
   .group-hover\:text-neutral-700 {
     &:is(:where(.group):hover *) {
       @media (hover: hover) {
         color: var(--color-neutral-700);
+      }
+    }
+  }
+  .group-hover\:text-pumpkin {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-pumpkin);
+      }
+    }
+  }
+  .group-hover\:text-stone-300 {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: var(--color-stone-300);
       }
     }
   }
@@ -1403,6 +1487,13 @@
       color: var(--color-sky-700);
     }
   }
+  .hover\:border-stone-100 {
+    &:hover {
+      @media (hover: hover) {
+        border-color: var(--color-stone-100);
+      }
+    }
+  }
   .hover\:bg-gray-100 {
     &:hover {
       @media (hover: hover) {
@@ -1424,6 +1515,13 @@
       }
     }
   }
+  .hover\:bg-stone-100 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-stone-100);
+      }
+    }
+  }
   .hover\:bg-teal-50 {
     &:hover {
       @media (hover: hover) {
@@ -1438,9 +1536,21 @@
       }
     }
   }
+  .hover\:text-stone-800 {
+    &:hover {
+      @media (hover: hover) {
+        color: var(--color-stone-800);
+      }
+    }
+  }
   .focus\:border-sky-700 {
     &:focus {
       border-color: var(--color-sky-700);
+    }
+  }
+  .sm\:grid-cols-2 {
+    @media (width >= 40rem) {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
   .sm\:px-8 {
@@ -1488,6 +1598,11 @@
       grid-template-columns: repeat(2, minmax(0, 1fr));
     }
   }
+  .lg\:grid-cols-4 {
+    @media (width >= 64rem) {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
   .lg\:px-0 {
     @media (width >= 64rem) {
       padding-inline: calc(var(--spacing) * 0);
@@ -1507,6 +1622,11 @@
     @media (width >= 64rem) {
       font-size: var(--text-9xl);
       line-height: var(--tw-leading, var(--text-9xl--line-height));
+    }
+  }
+  .xl\:min-h-\[53rem\] {
+    @media (width >= 80rem) {
+      min-height: 53rem;
     }
   }
   .xl\:min-h-\[650px\] {
@@ -1582,6 +1702,11 @@
       color: var(--color-neutral-50);
     }
   }
+  .dark\:text-neutral-100 {
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      color: var(--color-neutral-100);
+    }
+  }
   .dark\:text-neutral-200 {
     &:where([data-theme=dark], [data-theme=dark] *) {
       color: var(--color-neutral-200);
@@ -1590,6 +1715,11 @@
   .dark\:text-neutral-500 {
     &:where([data-theme=dark], [data-theme=dark] *) {
       color: var(--color-neutral-500);
+    }
+  }
+  .dark\:text-sky-400 {
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      color: var(--color-sky-400);
     }
   }
   .dark\:text-slate-50 {
@@ -1610,6 +1740,16 @@
   .dark\:text-slate-300 {
     &:where([data-theme=dark], [data-theme=dark] *) {
       color: var(--color-slate-300);
+    }
+  }
+  .dark\:text-stone-100 {
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      color: var(--color-stone-100);
+    }
+  }
+  .dark\:text-stone-300 {
+    &:where([data-theme=dark], [data-theme=dark] *) {
+      color: var(--color-stone-300);
     }
   }
   .dark\:opacity-100 {

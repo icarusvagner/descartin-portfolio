@@ -170,7 +170,7 @@ fn WorkComponent(
                         right_animate_class.get(),
                     )
                 }
-                style="background: radial-gradient(ellipse farthest-side at bottom center, #BFB9A1 0%, #F0E8C9 50%, #FFF8D6 100%);"
+                style="background: radial-gradient(ellipse at bottom, #f9f3df, #fdfce5, #d7e9f7);"
             >
                 <h1
                     class="text-neutral-800 font-bold font-oswald capitalize"

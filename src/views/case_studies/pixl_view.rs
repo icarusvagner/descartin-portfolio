@@ -32,18 +32,18 @@ pub fn Pixl8MultimediaView() -> impl IntoView {
             </div>
         </section>
 
-        <section class="mb-24 min-h-screen">
+        <section class="my-24 min-h-screen">
             <section class="relative overflow-hidden">
                 <div class="mx-auto grid h-full grid-cols-1 gap-12 px-3 py-12 lg:max-w-7xl lg:grid-cols-2 lg:px-0 xl:max-w-6xl">
                     <div class="flex flex-col gap-2">
                         <h1 class="case-project-title">"pixl8multimedia"</h1>
-                        <p class="mt-10 text-left text-lg font-normal tracking-wide text-neutral-600">
+                        <p class="mt-10 text-left text-lg font-normal tracking-wide text-neutral-600 dark:text-neutral-200">
                             "Pixl8Multimedia is a dynamic team of creatives, marketers, and storytellers unified by a mission to deliver impactful digital content across film, publishing, branding, and design."
                         </p>
-                        <p class="mt-10 text-left text-lg font-normal tracking-wide text-neutral-600">
+                        <p class="mt-10 text-left text-lg font-normal tracking-wide text-neutral-600 dark:text-neutral-200">
                             "From concept to completion, we bring bold visions to life helping brands connect with their audiences through cinematic visuals, strategic campaigns, and innovative digital experiences."
                         </p>
-                        <p class="mt-10 text-left text-lg font-normal tracking-wide text-neutral-600">
+                        <p class="mt-10 text-left text-lg font-normal tracking-wide text-neutral-600 dark:text-neutral-200">
                             "One exciting aspect of this project is that it's built using "
                             <strong class="text
                             -[#013299]
@@ -59,28 +59,36 @@ pub fn Pixl8MultimediaView() -> impl IntoView {
                 </div>
             </section>
 
-            <div class="relative mx-auto my-12 flex items-center justify-between gap-10 lg:max-w-7xl xl:max-w-6xl">
-                <div class="flex flex-col items-center justify-center">
+            <div class="relative mx-auto my-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:max-w-7xl xl:max-w-6xl">
+                <div class="flex flex-col items-center justify-center group">
                     <div class="h-40 w-40 rounded-full bg-[#011741] shadow-[0px_0px_15px_5px_rgba(8,0,0,0.41)]"></div>
-                    <h1 class="mt-7 text-neutral-700">"$oxford blue"</h1>
+                    <h1 class="mt-7 text-neutral-700 dark:text-neutral-100 duration-300 ease-in-out group-hover:text-pumpkin">
+                        "$oxford blue"
+                    </h1>
                 </div>
-                <div class="flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center justify-center group">
                     <div class="h-40 w-40 rounded-full bg-[#013299] shadow-[0px_0px_15px_5px_rgba(8,0,0,0.41)]"></div>
-                    <h1 class="mt-7 text-neutral-700">"$egyptian blue"</h1>
+                    <h1 class="mt-7 text-neutral-700 dark:text-neutral-100 duration-300 ease-in-out group-hover:text-pumpkin">
+                        "$egyptian blue"
+                    </h1>
                 </div>
-                <div class="flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center justify-center group">
                     <div class="h-40 w-40 rounded-full bg-[#2F71FF] shadow-[0px_0px_15px_5px_rgba(8,0,0,0.41)]"></div>
-                    <h1 class="mt-7 text-neutral-700">"$brandies blue"</h1>
+                    <h1 class="mt-7 text-neutral-700 dark:text-neutral-100 duration-300 ease-in-out group-hover:text-pumpkin">
+                        "$brandies blue"
+                    </h1>
                 </div>
-                <div class="flex flex-col items-center justify-center">
+                <div class="flex flex-col items-center justify-center group">
                     <div class="h-40 w-40 rounded-full bg-[#8DB0FA] shadow-[0px_0px_15px_5px_rgba(8,0,0,0.41)]"></div>
-                    <h1 class="mt-7 text-neutral-700">"$jordy blue"</h1>
+                    <h1 class="mt-7 text-neutral-700 dark:text-neutral-100 duration-300 ease-in-out group-hover:text-pumpkin">
+                        "$jordy blue"
+                    </h1>
                 </div>
                 <div class="flex flex-col items-center justify-center"></div>
             </div>
 
-            <div class="relative mx-auto my-12 grid grid-cols-2 gap-10 lg:max-w-7xl xl:max-w-6xl">
-                <div class="space-y-8 text-center font-roboto text-black">
+            <div class="relative mx-auto my-12 grid grid-cols-2 gap-10 lg:max-w-7xl xl:max-w-6xl text-stone-900 dark:text-stone-100">
+                <div class="space-y-8 text-center font-roboto">
                     <h1 class="text-4xl">"Roboto"</h1>
 
                     <div class="space-y-4 text-5xl">
@@ -90,7 +98,7 @@ pub fn Pixl8MultimediaView() -> impl IntoView {
                     </div>
                 </div>
 
-                <div class="space-y-8 text-center font-playfair text-black">
+                <div class="space-y-8 text-center font-playfair">
                     <h1 class="text-4xl">"Playfair Display"</h1>
 
                     <div class="space-y-4 text-5xl">
@@ -102,10 +110,10 @@ pub fn Pixl8MultimediaView() -> impl IntoView {
             </div>
 
             <div class="relative mx-auto mt-16 flex min-h-screen flex-col gap-1 lg:max-w-7xl xl:max-w-6xl">
-                <h3 class="text-center font-medium tracking-wide text-[#8DB0FA]">
+                <h3 class="text-center font-medium tracking-wide text-sky-600 dark:text-sky-400">
                     "UI & COMPONENTS"
                 </h3>
-                <h1 class="text-center text-3xl font-bold tracking-widest text-stone-600 capitalize">
+                <h1 class="text-center text-3xl font-bold tracking-widest text-stone-600 dark:text-stone-300 capitalize">
                     "design"
                 </h1>
                 <div class="relative w-full max-w-6xl mt-20">

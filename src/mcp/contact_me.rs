@@ -29,7 +29,10 @@ pub fn ContactMeSection() -> impl IntoView {
             <div class="absolute top-1/2 left-1/2 grid min-h-[calc(100vh-5rem)] min-w-7xl -translate-x-1/2 -translate-y-1/2 grid-cols-2 shadow-2xl">
                 // Left Content
                 <div class=move || {
-                    format!("relative bg-stone-100 p-14 {}", left_contact_section.get())
+                    format!(
+                        "relative bg-stone-100 p-14 flex items-center {}",
+                        left_contact_section.get(),
+                    )
                 }>
                     <div
                         class="absolute top-0 right-0 z-0 flex flex-col text-right text-9xl font-black text-neutral-200"
@@ -120,7 +123,7 @@ pub fn ContactMeSection() -> impl IntoView {
                 // Right content
                 <div class=move || {
                     format!(
-                        "flex flex-col gap-0.5 bg-stone-800 p-18 {}",
+                        "flex flex-col gap-0.5 bg-stone-800 p-18 justify-center {}",
                         right_contact_section.get(),
                     )
                 }>
