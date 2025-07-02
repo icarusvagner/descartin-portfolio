@@ -1,5 +1,7 @@
 use leptos::prelude::*;
 
+use crate::components::NextWorkButton;
+
 #[component]
 pub fn CebuToursAdventuresView() -> impl IntoView {
     view! {
@@ -16,18 +18,21 @@ pub fn CebuToursAdventuresView() -> impl IntoView {
                 </h3>
             </div>
 
-            <div class="flex items-center justify-between pb-10 w-full px-12">
-                <div class="flex text-[.75em] tracking-[2px] font-bold items-center gap-2.5 uppercase">
-                    <h1 class="text-sky-400">"role"</h1>
-                    <h3 class="text-neutral-100">"full-stack developer"</h3>
-                </div>
-                <div class="flex text-[.75em] tracking-[2px] font-bold items-center gap-2.5 uppercase">
-                    <h1 class="text-sky-400">"context"</h1>
-                    <h3 class="text-neutral-100">"website design"</h3>
-                </div>
-                <div class="flex text-[.75em] tracking-[2px] font-bold items-center gap-2.5 uppercase">
-                    <h1 class="text-sky-400">"period"</h1>
-                    <h3 class="text-neutral-100">"early 2025"</h3>
+            <div class="w-full px-4 py-8">
+                <div class="flex flex-wrap justify-center items-center gap-x-10 gap-y-4 font-bold tracking-[2px] uppercase text-white text-center">
+
+                    <div class="flex text-[.75em] tracking-[2px] font-bold items-center gap-2.5 uppercase">
+                        <h1 class="text-sky-400">"role"</h1>
+                        <h3 class="text-neutral-100">"full-stack developer"</h3>
+                    </div>
+                    <div class="flex text-[.75em] tracking-[2px] font-bold items-center gap-2.5 uppercase">
+                        <h1 class="text-sky-400">"context"</h1>
+                        <h3 class="text-neutral-100">"website design"</h3>
+                    </div>
+                    <div class="flex text-[.75em] tracking-[2px] font-bold items-center gap-2.5 uppercase">
+                        <h1 class="text-sky-400">"period"</h1>
+                        <h3 class="text-neutral-100">"early 2025"</h3>
+                    </div>
                 </div>
             </div>
         </section>
@@ -49,14 +54,14 @@ pub fn CebuToursAdventuresView() -> impl IntoView {
                 </div>
 
                 <div class="absolute bottom-0 left-10 z-0">
-                    <h1 class="text-7xl font-montserrat font-black tracking-widest text-stone-100/30">
+                    <h1 class="text-4xl lg:text-7xl font-montserrat font-black tracking-widest text-stone-100/30">
                         "Cebu Tours & Adventures"
                     </h1>
                 </div>
             </section>
 
             <section class="relative overflow-hidden">
-                <div class="mx-auto grid h-full grid-cols-1 gap-12 px-3 py-12 lg:max-w-7xl lg:grid-cols-2 lg:px-0 xl:max-w-6xl">
+                <div class="mx-auto grid h-full gap-12 px-3 py-12 lg:max-w-7xl lg:grid-cols-2 lg:px-0 xl:max-w-6xl">
                     <div class="flex flex-col gap-2">
                         <h1 class="case-project-title">"cebu tours & adventures"</h1>
                         <p class="mt-10 text-left text-lg font-normal tracking-wide text-neutral-600 dark:text-neutral-200">
@@ -69,11 +74,11 @@ pub fn CebuToursAdventuresView() -> impl IntoView {
                         </p>
                     </div>
 
-                    <div class="relative bg-[url('/public/assets/works/cta/img-01.png')] bg-contain bg-center bg-no-repeat"></div>
+                    <div class="relative bg-[url('/public/assets/works/cta/img-01.png')] h-96 lg:h-full bg-contain bg-center bg-no-repeat"></div>
                 </div>
             </section>
 
-            <div class="relative mx-auto my-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:max-w-7xl xl:max-w-6xl">
+            <div class="relative mx-auto my-12 grid grid-cols-2 lg:grid-cols-5 gap-10 lg:max-w-7xl xl:max-w-6xl justify-center">
                 <div class="flex flex-col items-center justify-center group">
                     <div class="h-40 w-40 rounded-full bg-[#1b468f] shadow-[0px_0px_15px_5px_rgba(8,0,0,0.41)]"></div>
                     <h1 class="mt-7 text-neutral-700 dark:text-neutral-100 duration-300 ease-in-out group-hover:text-pumpkin">
@@ -101,7 +106,7 @@ pub fn CebuToursAdventuresView() -> impl IntoView {
                 <div class="flex flex-col items-center justify-center"></div>
             </div>
 
-            <div class="relative mx-auto my-12 grid grid-cols-2 gap-10 lg:max-w-7xl xl:max-w-6xl text-stone-900 dark:text-stone-100">
+            <div class="relative mx-auto my-12 grid lg:grid-cols-2 gap-18 lg:gap-10 lg:max-w-7xl xl:max-w-6xl text-stone-900 dark:text-stone-100">
                 <div class="space-y-8 text-center font-montserrat">
                     <h1 class="text-4xl">"Montserrat"</h1>
 
@@ -132,10 +137,17 @@ pub fn CebuToursAdventuresView() -> impl IntoView {
                 </h1>
                 <div class="relative w-full h-screen max-w-6xl pt-20 mx-auto">
 
-                    <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-center bg-contain bg-[url('/public/assets/works/cta/img-02.png')] h-full w-2xl"></div>
+                    <div class="absolute top-12 left-1/2 -translate-x-1/2 bg-center bg-no-repeat bg-contain bg-[url('/public/assets/works/cta/img-02.png')] h-[40rem] w-2xl"></div>
                     <div class="absolute bottom-10 left-1/2 -translate-x-1/2 bg-center bg-contain bg-no-repeat bg-[url('/public/assets/works/cta/img-03.png')] h-[30rem] w-full"></div>
                 </div>
             </div>
         </section>
+
+        <NextWorkButton
+            title="castlebyte techsolutions"
+            link="/case-studies/castlebyte-techsolutions"
+            color1="bg-[#2a659a]"
+            color2="bg-[#ff7f00]"
+        />
     }
 }

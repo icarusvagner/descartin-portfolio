@@ -14,9 +14,9 @@ pub fn HeroSection() -> impl IntoView {
     view! {
         <section
             id="top"
-            class="relative flex min-h-[580px] xl:min-h-[53rem] overflow-hidden items-center bg-slate-100 dark:bg-slate-900"
+            class="relative flex min-h-screen sm:min-h-[580px] xl:min-h-[53rem] overflow-hidden items-center bg-slate-100 dark:bg-slate-900"
         >
-            <div class="absolute top-24 -translate-x-1/2 left-1/2 z-0 w-48 h-80">
+            <div class="absolute top-1/2 sm:top-24 xl:top-1/2 -translate-y-1/2 -translate-x-1/2 left-1/2 z-0 w-48 h-80">
                 <InitialSVGLogo class="h-full w-full dark:opacity-100 opacity-75" />
             </div>
 
@@ -66,7 +66,7 @@ pub fn HeroSection() -> impl IntoView {
 #[component]
 fn IconLinks() -> impl IntoView {
     view! {
-        <div class="absolute top-1/2 right-4 -translate-y-1/2 scale-in-right">
+        <div class="hidden sm:absolute top-1/2 right-4 -translate-y-1/2 scale-in-right">
             <div class="flex flex-col items-center justify-center gap-5">
                 <a href="#">
                     <Icon

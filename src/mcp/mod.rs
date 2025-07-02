@@ -5,11 +5,12 @@ use leptos::{context::Provider, prelude::*, server::codee::string::JsonSerdeCode
 use leptos_meta::Html;
 use leptos_use::storage::use_local_storage;
 
-#[derive(Clone)]
+#[derive(Clone, Copy)]
 pub struct ModalContextProvider {
     pub contact_state: RwSignal<bool>,
     pub dark: RwSignal<bool>,
     pub show_state: RwSignal<bool>,
+    pub show_menu: RwSignal<bool>,
 }
 
 impl ModalContextProvider {
@@ -21,6 +22,7 @@ impl ModalContextProvider {
         Self {
             contact_state: RwSignal::new(false),
             show_state: RwSignal::new(false),
+            show_menu: RwSignal::new(false),
             dark: RwSignal::new(dark_value),
         }
     }

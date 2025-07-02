@@ -22,6 +22,7 @@ pub fn ShowModalContext() -> impl IntoView {
     view! {
         <Body class:overflow-hidden=move || {
             modal_context.show_state.get() || modal_context.contact_state.get()
+                || modal_context.show_menu.get()
         } />
 
         <Show when=modal_context.show_state fallback=|| ()>

@@ -26,7 +26,7 @@ pub fn App() -> impl IntoView {
         <Title text="Lance Phillip Descartin - Interactive Frontend" />
 
         <ContextProvider>
-            <main class="min-h-screen dark:bg-slate-800 bg-slate-50 text-neutral-900 dark:text-neutral-50">
+            <main class="min-h-screen dark:bg-slate-800 bg-slate-50 text-neutral-900 dark:text-neutral-50 overflow-x-hidden">
                 <AppRoutes />
             </main>
 

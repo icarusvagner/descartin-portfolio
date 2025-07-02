@@ -36,7 +36,7 @@ pub fn AllWorksComponent() -> impl IntoView {
             </button>
 
             // <!-- Content wrapper -->
-            <div class="space-y-24">
+            <div class="space-y-24 px-3">
                 <WorkComponent
                     order=CompOrder::ToLeft
                     title="castlebyte techsolutions"
@@ -131,7 +131,7 @@ fn WorkComponent(
     view! {
         <div class=move || {
             format!(
-                "mx-auto flex max-w-6xl shadow-2xl min-h-[calc(100vh-8rem)] {}",
+                "mx-auto flex max-w-6xl shadow-2xl h-[calc(100vh-20rem)] md:h-[calc(100vh-8rem)] {}",
                 order.get().as_str().split_whitespace().next().unwrap_or_default(),
             )
         }>

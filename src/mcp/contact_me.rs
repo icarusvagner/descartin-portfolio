@@ -25,12 +25,12 @@ pub fn ContactMeSection() -> impl IntoView {
 
     view! {
         // <!-- About Me Section -->
-        <section class="fixed inset-0 z-[9999] min-h-screen">
-            <div class="absolute top-1/2 left-1/2 grid min-h-[calc(100vh-5rem)] min-w-7xl -translate-x-1/2 -translate-y-1/2 grid-cols-2 shadow-2xl">
+        <section class="absolute md:fixed inset-0 z-[9999] overflow-y-auto min-h-screen">
+            <div class="absolute top-1/2 left-1/2 grid h-full md:h-[calc(100vh-5rem)] w-full md:w-7xl -translate-x-1/2 -translate-y-1/2 md:grid-cols-2 shadow-2xl">
                 // Left Content
                 <div class=move || {
                     format!(
-                        "relative bg-stone-100 p-14 flex items-center {}",
+                        "relative bg-stone-100 p-14 flex items-center md:order-1 order-2 {}",
                         left_contact_section.get(),
                     )
                 }>
@@ -64,7 +64,7 @@ pub fn ContactMeSection() -> impl IntoView {
                         </blockquote>
 
                         // <!-- Tech Stack Buttons -->
-                        <div class="mt-4 flex flex-wrap gap-4">
+                        <div class="mt-4 grid grid-cols-2 md:grid-cols-4 gap-4">
                             // <!-- Frontend -->
                             <button
                                 type="button"
@@ -123,7 +123,7 @@ pub fn ContactMeSection() -> impl IntoView {
                 // Right content
                 <div class=move || {
                     format!(
-                        "flex flex-col gap-0.5 bg-stone-800 p-18 justify-center {}",
+                        "flex flex-col gap-0.5 bg-stone-800 p-18 md:order-2 order-1 justify-center {}",
                         right_contact_section.get(),
                     )
                 }>

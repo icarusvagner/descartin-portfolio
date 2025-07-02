@@ -3,7 +3,10 @@ use leptos_icons::Icon;
 use leptos_router::{components::A, hooks::use_navigate};
 use leptos_use::use_debounce_fn;
 
-use crate::{components::svgs::InitialSVGLogoTransparent, mcp::ModalContextProvider};
+use crate::{
+    components::{svgs::InitialSVGLogoTransparent, MobileMenu},
+    mcp::ModalContextProvider,
+};
 
 #[component]
 pub fn CTHeader() -> impl IntoView {
@@ -27,7 +30,13 @@ pub fn CTHeader() -> impl IntoView {
 
             <div class="mx-auto"></div>
 
-            <div class="flex items-center gap-4">
+            <button class="m-0 p-0 block lg:hidden flex flex-col items-end gap-2 w-14 cursor-pointer">
+                <div class="h-1 w-full bg-stone-100"></div>
+                <div class="h-1 w-10 bg-stone-100"></div>
+                <div class="h-1 w-5 bg-stone-100"></div>
+            </button>
+
+            <div class="hidden lg:flex items-center gap-4">
                 <CTLinkTag title="Go back Home" link="/" icon=icondata::BsArrowLeft />
                 <CTLinkTag
                     title="all works"
@@ -63,7 +72,16 @@ pub fn FirstHeader() -> impl IntoView {
 
             <div class="mx-auto"></div>
 
-            <div class="flex items-center gap-4">
+            <button
+                on:click=move |_| context.show_menu.set(true)
+                class="m-0 p-0 block lg:hidden flex flex-col items-end gap-2 w-14 cursor-pointer group"
+            >
+                <div class="h-1 w-full bg-neutral-500 group-hover:dark:bg-neutral-100 group-hover:bg-neutral-700 duration-400 ease-initial"></div>
+                <div class="h-1 w-10 bg-neutral-500 group-hover:dark:bg-neutral-100 group-hover:bg-neutral-700 duration-400 ease-initial"></div>
+                <div class="h-1 w-5 bg-neutral-500 group-hover:dark:bg-neutral-100 group-hover:bg-neutral-700 duration-400 ease-initial"></div>
+            </button>
+
+            <div class="hidden lg:flex items-center gap-4">
                 <LinkTag title="case studies" link="#case_studies" />
                 <LinkTag
                     title="contact"
@@ -79,6 +97,25 @@ pub fn FirstHeader() -> impl IntoView {
                 />
             </div>
         </nav>
+
+        <Show when=move || context.show_menu.get() fallback=|| ()>
+            <MobileMenu>
+                <LinkTag title="case studies" link="#case_studies" />
+                <LinkTag
+                    title="contact"
+                    on_click=move |_| {
+                        context.contact_state.update(|val| *val = true);
+                        context.show_menu.update(|val| *val = true);
+                    }
+                />
+                <LinkTag
+                    icon=icondata::VsColorMode
+                    on_click=move |_| {
+                        context.update_theme();
+                    }
+                />
+            </MobileMenu>
+        </Show>
     }
 }
 
@@ -90,6 +127,7 @@ pub fn LinkTag(
     #[prop(into, optional)] on_click: Option<crate::BoxOneCallback<leptos::ev::MouseEvent>>,
 ) -> impl IntoView {
     let navigate = use_navigate();
+    let context = ModalContextProvider::expect_context();
 
     let on_click = move |e: leptos::ev::MouseEvent| {
         if !link.get_untracked().is_empty() {
@@ -100,6 +138,10 @@ pub fn LinkTag(
         let Some(on_click) = on_click.as_ref() else {
             return;
         };
+
+        context.show_menu.set(false);
+        context.show_state.set(false);
+        context.contact_state.set(false);
 
         on_click(e);
     };
@@ -117,7 +159,7 @@ pub fn LinkTag(
                                 icon=icon
                                 attr:class=move || {
                                     format!(
-                                        "h-5 w-5 text-stone-500 group-hover:dark:text-stone-50 group-hover:text-stone-700 duration-200 ease-initial transition-all {}",
+                                        "h-8 w-8 md:h-5 md:w-5 text-stone-500 group-hover:dark:text-stone-50 group-hover:text-stone-700 duration-200 ease-initial transition-all {}",
                                         if title.get_untracked().is_some() {
                                             "group-hover:-translate-x-2"
                                         } else {
@@ -137,7 +179,7 @@ pub fn LinkTag(
                 if let Some(title) = title.get_untracked() {
                     Either::Left(
                         view! {
-                            <span class="z-10 text-lg capitalize font-black text-stone-500 group-hover:dark:text-stone-50 group-hover:text-stone-700 duration-200 ease-initial">
+                            <span class="z-10 text-2xl md:text-lg capitalize font-black text-stone-500 group-hover:dark:text-stone-50 group-hover:text-stone-700 duration-200 ease-initial">
                                 {title}
                             </span>
                         },
