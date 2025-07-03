@@ -29,7 +29,7 @@ jobs:
           node-version: lts/*
 
       - name: Install step
-        run: "cargo install trunk; rustup target add wasm32-unknown-unknown;"
+        run: "cargo install trunk; rustup target add wasm32-unknown-unknown; npm install;"
 
       - name: Build step
         run: "trunk build --release"
