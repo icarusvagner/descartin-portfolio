@@ -115,9 +115,12 @@ pub fn MobileMenu(children: Children) -> impl IntoView {
 
     view! {
         <section class=move || {
-            format!("fixed z-[9999] h-dvh w-0 {}", if body_menu.get() { "w-full" } else { "" })
+            format!(
+                "fixed z-[9999] overflow-hidden h-dvh w-0 {}",
+                if body_menu.get() { "w-full" } else { "" },
+            )
         }>
-            <div class="relative h-full w-full">
+            <div class="relative h-full w-full pb-24">
                 <span class=move || {
                     format!(
                         "absolute inset-0 h-full w-0 bg-amber-500 transition-all duration-200 ease-in-out {}",

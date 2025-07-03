@@ -4,7 +4,7 @@ use leptos_icons::Icon;
 #[component]
 pub fn CaseStudiesSection() -> impl IntoView {
     view! {
-        <section id="case_studies" class="py-5 px-3 pt-22 min-h-screen relative overflow-hidden">
+        <section id="case_studies" class="px-3 py-22 min-h-screen relative overflow-hidden">
             <h1 class="text-center text-xl text-neutral-400 dark:text-neutral-500 font-black uppercase">
                 "case studies"
             </h1>
@@ -91,11 +91,11 @@ fn CaseComponent(
             }
             class=move || {
                 format!(
-                    "relative flex p-12 md:p-24 h-[460px] w-full w-4xl items-center bg-cover bg-top shadow-[5px_5px_15px_5px_rgba(18,0,0,0.6)] {}",
+                    "relative flex p-12 md:p-24 h-[460px] w-full md:w-4xl items-center bg-cover bg-top shadow-[5px_5px_15px_5px_rgba(18,0,0,0.6)] {}",
                     if direction.get().to_string().eq("rtl") {
-                        "md:ml-12 mx-auto"
+                        "md:ml-12 mx-auto md:mx-0"
                     } else if direction.get().to_string().eq("ltr") {
-                        "md:mr-12 mx-auto"
+                        "md:mr-12 mx-auto md:mx-0"
                     } else {
                         "mx-auto"
                     },

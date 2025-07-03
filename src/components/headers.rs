@@ -30,7 +30,10 @@ pub fn CTHeader() -> impl IntoView {
 
             <div class="mx-auto"></div>
 
-            <button class="m-0 p-0 block lg:hidden flex flex-col items-end gap-2 w-14 cursor-pointer">
+            <button
+                on:click=move |_| modal_context.show_menu.set(true)
+                class="m-0 p-0 block lg:hidden flex flex-col items-end gap-2 w-14 cursor-pointer"
+            >
                 <div class="h-1 w-full bg-stone-100"></div>
                 <div class="h-1 w-10 bg-stone-100"></div>
                 <div class="h-1 w-5 bg-stone-100"></div>
@@ -52,6 +55,24 @@ pub fn CTHeader() -> impl IntoView {
                 />
             </div>
         </nav>
+
+        <Show when=move || modal_context.show_menu.get() fallback=|| ()>
+            <MobileMenu>
+                <CTLinkTag title="Go back Home" link="/" />
+                <CTLinkTag
+                    title="all works"
+                    on_click=move |_| {
+                        modal_context.show_state.update(|val| *val = true);
+                    }
+                />
+                <CTLinkTag
+                    title="contact"
+                    on_click=move |_| {
+                        modal_context.contact_state.update(|val| *val = true);
+                    }
+                />
+            </MobileMenu>
+        </Show>
     }
 }
 
@@ -130,6 +151,10 @@ pub fn LinkTag(
     let context = ModalContextProvider::expect_context();
 
     let on_click = move |e: leptos::ev::MouseEvent| {
+        context.show_menu.set(false);
+        context.show_state.set(false);
+        context.contact_state.set(false);
+
         if !link.get_untracked().is_empty() {
             navigate(link.get_untracked().as_ref(), Default::default());
             return;
@@ -138,10 +163,6 @@ pub fn LinkTag(
         let Some(on_click) = on_click.as_ref() else {
             return;
         };
-
-        context.show_menu.set(false);
-        context.show_state.set(false);
-        context.contact_state.set(false);
 
         on_click(e);
     };
@@ -200,8 +221,13 @@ pub fn CTLinkTag(
     #[prop(into, optional)] on_click: Option<crate::BoxOneCallback<leptos::ev::MouseEvent>>,
 ) -> impl IntoView {
     let navigate = use_navigate();
+    let context = ModalContextProvider::expect_context();
 
     let on_click = move |e: leptos::ev::MouseEvent| {
+        context.show_menu.set(false);
+        context.show_state.set(false);
+        context.contact_state.set(false);
+
         if !link.get_untracked().is_empty() {
             navigate(link.get_untracked().as_ref(), Default::default());
             return;

@@ -25,7 +25,7 @@ pub fn ContactMeSection() -> impl IntoView {
 
     view! {
         // <!-- About Me Section -->
-        <section class="absolute md:fixed inset-0 z-[9999] overflow-y-auto min-h-screen">
+        <section class="fixed inset-0 z-[9999] overflow-y-auto min-h-screen">
             <div class="absolute top-1/2 left-1/2 grid h-full md:h-[calc(100vh-5rem)] w-full md:w-7xl -translate-x-1/2 -translate-y-1/2 md:grid-cols-2 shadow-2xl">
                 // Left Content
                 <div class=move || {
