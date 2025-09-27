@@ -15,6 +15,7 @@ leptos_axum = { version = "0.8.0", optional = true }
 leptos_meta = { version = "0.8.0" }
 tokio = { version = "1", features = ["rt-multi-thread"], optional = true }
 wasm-bindgen = { version = "=0.2.103", optional = true }
+
 leptos-use = { version = "0.16.2", features = ["storage", "use_event_listener", "on_click_outside", "use_window_focus", "use_intersection_observer"] }
 phosphor-leptos = "0.8.0"
 icondata = "0.6.0"

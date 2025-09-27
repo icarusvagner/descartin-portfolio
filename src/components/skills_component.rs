@@ -2,20 +2,22 @@ mod skills;
 
 use leptos::prelude::*;
 
-use crate::components::skills_component::skills::{backend::BackendTab, frontend::FrontendTab};
+use crate::components::skills_component::skills::{
+    backend::BackendTab, frontend::FrontendTab, tools_others::ToolsOthersTab,
+};
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 enum TabType {
-	Frontend,
-	Backend,
-	Others,
+    Frontend,
+    Backend,
+    Others,
 }
 
 #[component]
 pub fn SkillsComponent() -> AnyView {
-	let tab_view = RwSignal::new(TabType::Frontend);
+    let tab_view = RwSignal::new(TabType::Frontend);
 
-	view! {
+    view! {
 		<section id="skills" class="container py-20 px-4 mx-auto">
 			<div>
 				<h2 class="mb-2 text-3xl font-bold">"Skills & Technologies"</h2>
@@ -71,16 +73,16 @@ pub fn SkillsComponent() -> AnyView {
 
 #[component]
 fn TabView(#[prop(into)] tab_type: Signal<TabType>) -> AnyView {
-	view! {
-		<div class="grid grid-cols-2 gap-4 mt-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-			{move || {
-				match tab_type.get() {
-					TabType::Frontend => view! { <FrontendTab /> }.into_any(),
-					TabType::Backend => view! { <BackendTab /> }.into_any(),
-					_ => view! { "Tools & Others" }.into_any(),
-				}
-			}}
-		</div>
-	}
-	.into_any()
+    view! {
+        <div class="grid grid-cols-2 gap-4 mt-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+            {move || {
+                match tab_type.get() {
+                    TabType::Frontend => view! { <FrontendTab /> }.into_any(),
+                    TabType::Backend => view! { <BackendTab /> }.into_any(),
+                    _ => view! { <ToolsOthersTab /> }.into_any(),
+                }
+            }}
+        </div>
+    }
+    .into_any()
 }
