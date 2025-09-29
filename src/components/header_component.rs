@@ -18,7 +18,7 @@ pub fn HeaderComponent() -> AnyView {
 				<div class="flex gap-5 items-center text-base-content">
 					<LinkTag title="About" link="#about" />
 					<LinkTag title="Skills" link="#skills" />
-					<LinkTag title="Projects" link="#projects" />
+					// <LinkTag title="Projects" link="#projects" />
 					<LinkTag title="Experience" link="#experience" />
 					<LinkTag title="Contact" link="#contact" />
 				</div>

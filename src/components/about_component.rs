@@ -62,6 +62,12 @@ pub fn AboutComponent() -> AnyView {
 									attr:class="h-10 w-10"
 								/>
 							</A>
+							<A href="https://youtube.com/@cnalecoding" attr:class="cursor-pointer">
+								<LeptosIcon
+									icon=icondata::FaSquareYoutubeBrands
+									attr:class="h-10 w-10"
+								/>
+							</A>
 						</div>
 					</div>
 				</div>
