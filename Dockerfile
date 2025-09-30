@@ -12,7 +12,10 @@ RUN cp cargo-binstall /usr/local/cargo/bin
 
 # Install required tools
 RUN apt-get update -y \
-  && apt-get install -y --no-install-recommends clang
+  && apt-get install -y --no-install-recommends clang \
+  && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+  && apt-get install -y --no-install-recommends nodejs \
+  && rm -rf /var/lib/apt/lists/*
 
 # Install cargo-leptos
 RUN cargo binstall cargo-leptos -y
