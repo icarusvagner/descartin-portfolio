@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 
 #[component]
-pub fn ExperienceComponent() -> AnyView {
+pub fn ExperienceComponent() -> impl IntoView {
 	let exp_1 = RwSignal::new(
 		[
 			"Lead a team developer building and maintaining the website".to_string(),
@@ -87,7 +87,6 @@ pub fn ExperienceComponent() -> AnyView {
 			</div>
 		</section>
 	}
-	.into_any()
 }
 
 #[component]
@@ -98,7 +97,7 @@ fn ExperienceCard(
 	#[prop(into)] job_title: String,
 	#[prop(into)] job_desc: RwSignal<Vec<String>>,
 	#[prop(into)] tech_stack: RwSignal<Vec<String>>,
-) -> AnyView {
+) -> impl IntoView {
 	view! {
 		<div class="flex flex-col gap-4 md:flex-row">
 			<div class="md:w-1/3">
@@ -121,5 +120,4 @@ fn ExperienceCard(
 			</div>
 		</div>
 	}
-	.into_any()
 }

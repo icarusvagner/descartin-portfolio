@@ -3,7 +3,7 @@ use leptos_router::components::A;
 use phosphor_leptos::{Icon, DOWNLOAD_SIMPLE};
 
 #[component]
-pub fn HeroComponent() -> AnyView {
+pub fn HeroComponent() -> impl IntoView {
     view! {
         <section class="container flex flex-col gap-8 items-center py-20 px-4 mx-auto md:flex-row md:py-32 font-poppins">
             <div class="flex-1">
@@ -42,5 +42,5 @@ pub fn HeroComponent() -> AnyView {
                 </div>
             </div>
         </section>
-    }.into_any()
+    }
 }

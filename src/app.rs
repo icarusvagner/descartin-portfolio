@@ -53,5 +53,4 @@ pub fn App() -> impl IntoView {
             </Router>
         </ContextProvider>
     }
-    .into_view()
 }

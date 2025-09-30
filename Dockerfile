@@ -12,10 +12,7 @@ RUN cp cargo-binstall /usr/local/cargo/bin
 
 # Install required tools
 RUN apt-get update -y \
-  && apt-get install -y --no-install-recommends clang \
-  && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
-  && apt-get install -y --no-install-recommends nodejs \
-  && rm -rf /var/lib/apt/lists/*
+  && apt-get install -y --no-install-recommends clang
 
 # Install cargo-leptos
 RUN cargo binstall cargo-leptos -y
@@ -29,7 +26,6 @@ WORKDIR /app
 COPY . .
 
 # Build the app
-RUN npm install
 RUN cargo leptos build --release -vv
 
 FROM debian:bookworm-slim as runtime
@@ -42,7 +38,7 @@ RUN apt-get update -y \
 
 # -- NB: update binary name from "leptos_start" to match your app name in Cargo.toml --
 # Copy the server binary to the /app directory
-COPY --from=builder /app/target/release/portfolio_v1 /app/
+COPY --from=builder /app/target/release/portfolio-v1 /app/
 
 # /target/site contains our JS/WASM/CSS, etc.
 COPY --from=builder /app/target/site /app/site
@@ -58,5 +54,4 @@ EXPOSE 8080
 
 # -- NB: update binary name from "leptos_start" to match your app name in Cargo.toml --
 # Run the server
-CMD ["/app/portfolio_v1"]
-
+CMD ["/app/portfolio-v1"]

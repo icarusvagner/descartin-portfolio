@@ -6,7 +6,7 @@ use phosphor_leptos::{Icon as PhosphorIcon, LIST};
 use crate::{mcp::ModalContextProvider, utils::svgs::InitialSVGLogo};
 
 #[component]
-pub fn HeaderComponent() -> AnyView {
+pub fn HeaderComponent() -> impl IntoView {
     let context = ModalContextProvider::expect_context();
 
     view! {
@@ -52,7 +52,7 @@ pub fn HeaderComponent() -> AnyView {
 }
 
 #[component]
-fn Sidebar(children: Children) -> AnyView {
+fn Sidebar(children: Children) -> impl IntoView {
     view! {
         <div class="md:hidden drawer drawer-end">
             <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
@@ -109,14 +109,13 @@ fn Sidebar(children: Children) -> AnyView {
             </div>
         </div>
     }
-    .into_any()
 }
 
 #[component]
 fn LinkTag(
     #[prop(into)] title: MaybeProp<String>,
     #[prop(into)] link: MaybeProp<String>,
-) -> AnyView {
+) -> impl IntoView {
     view! {
         <A
             href=move || link.get().unwrap_or_default()
@@ -125,5 +124,4 @@ fn LinkTag(
             {move || title.get().unwrap_or_default()}
         </A>
     }
-	.into_any()
 }

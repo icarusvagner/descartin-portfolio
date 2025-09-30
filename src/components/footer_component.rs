@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 
 #[component]
-pub fn FooterComponent() -> AnyView {
+pub fn FooterComponent() -> impl IntoView {
 	view! {
 		<footer class="py-8 bg-base-300">
 			<div class="container px-4 mx-auto text-center">
@@ -13,5 +13,4 @@ pub fn FooterComponent() -> AnyView {
 			</div>
 		</footer>
 	}
-	.into_any()
 }

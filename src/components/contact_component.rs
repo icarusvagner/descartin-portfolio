@@ -6,7 +6,7 @@ use phosphor_leptos::{Icon, DOWNLOAD_SIMPLE, ENVELOPE_SIMPLE, MAP_PIN_AREA, PHON
 use crate::utils::server::ApiSendEmail;
 
 #[component]
-pub fn ContactComponent() -> AnyView {
+pub fn ContactComponent() -> impl IntoView {
     let email_send_action = ServerAction::<ApiSendEmail>::new();
 
     let res_email_send_action = { email_send_action.value() };
@@ -185,5 +185,5 @@ pub fn ContactComponent() -> AnyView {
                 </div>
             </div>
         </section>
-    }.into_any()
+    }
 }

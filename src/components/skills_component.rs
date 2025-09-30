@@ -14,7 +14,7 @@ enum TabType {
 }
 
 #[component]
-pub fn SkillsComponent() -> AnyView {
+pub fn SkillsComponent() -> impl IntoView {
     let tab_view = RwSignal::new(TabType::Frontend);
 
     view! {
@@ -68,11 +68,10 @@ pub fn SkillsComponent() -> AnyView {
 			</div>
 		</section>
 	}
-	.into_any()
 }
 
 #[component]
-fn TabView(#[prop(into)] tab_type: Signal<TabType>) -> AnyView {
+fn TabView(#[prop(into)] tab_type: Signal<TabType>) -> impl IntoView {
     view! {
         <div class="grid grid-cols-2 gap-4 mt-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
             {move || {
@@ -84,5 +83,4 @@ fn TabView(#[prop(into)] tab_type: Signal<TabType>) -> AnyView {
             }}
         </div>
     }
-    .into_any()
 }

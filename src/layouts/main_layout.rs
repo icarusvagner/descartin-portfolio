@@ -4,7 +4,7 @@ use leptos_router::components::Outlet;
 use crate::components::{footer_component::FooterComponent, header_component::HeaderComponent};
 
 #[component]
-pub fn MainLayout() -> AnyView {
+pub fn MainLayout() -> impl IntoView {
 	view! {
 		<main class="bg-base-200 text-base-content">
 			<HeaderComponent />
@@ -14,5 +14,4 @@ pub fn MainLayout() -> AnyView {
 			<FooterComponent />
 		</main>
 	}
-	.into_any()
 }
