@@ -64,7 +64,7 @@ pub fn ExperienceComponent() -> AnyView {
 							job_desc=exp_1
 							tech_stack=exp_1_techs
 						/>
-						<hr class="my-8 w-full h-0.5 border-none shrink-0 bg-base-300/70" />
+						<hr class="my-8 w-full h-0.5 border-none shrink-0 divider" />
 						<ExperienceCard
 							year="6 Months"
 							company="DAC Innovative and IT Services"
@@ -73,7 +73,7 @@ pub fn ExperienceComponent() -> AnyView {
 							job_desc=exp_2
 							tech_stack=exp_2_techs
 						/>
-						<hr class="my-8 w-full h-0.5 border-none shrink-0 bg-base-300/70" />
+						<hr class="my-8 w-full h-0.5 border-none shrink-0 divider" />
 						<ExperienceCard
 							year="6 Months"
 							company="CPC Library"

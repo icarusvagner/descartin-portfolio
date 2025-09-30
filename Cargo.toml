@@ -21,6 +21,13 @@ phosphor-leptos = "0.8.0"
 icondata = "0.6.0"
 icondata_core = "0.1.0"
 leptos_icons = "0.7.0"
+maud = { version = "0.27.0", optional = true }
+dotenvy = { version = "0.15.7", optional = true }
+env_logger = "0.11.8"
+lettre = { version = "0.11.18", optional = true }
+cfg-if = "1.0.3"
+thiserror = { version = "2.0.17", optional = true }
+log = { version = "0.4.28", optional = true }
 
 [features]
 hydrate = [
@@ -29,14 +36,23 @@ hydrate = [
     "dep:wasm-bindgen",
 ]
 ssr = [
+    "dep:thiserror",
+    "dep:maud",
     "dep:axum",
+    "dep:lettre",
     "dep:tokio",
     "dep:leptos_axum",
+    "dep:dotenvy",
+    "dep:log",
     "leptos/ssr",
     "leptos_meta/ssr",
     "leptos_router/ssr",
     "leptos-use/ssr"
 ]
+dotenvy = ["dep:dotenvy"]
+lettre = ["dep:lettre"]
+thiserror = ["dep:thiserror"]
+log = ["dep:log"]
 
 # Defines a size-optimized profile for the WASM bundle in release mode
 [profile.wasm-release]

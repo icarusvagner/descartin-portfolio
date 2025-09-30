@@ -1,11 +1,13 @@
 use leptos::prelude::*;
 use leptos_icons::Icon as LeptosIcon;
 use leptos_router::components::A;
-use phosphor_leptos::{Icon, CALENDAR_DOTS, ENVELOPE_SIMPLE, GRADUATION_CAP, MAP_PIN_AREA, PHONE};
+use phosphor_leptos::{
+    Icon, CALENDAR_DOTS, DOWNLOAD_SIMPLE, ENVELOPE_SIMPLE, GRADUATION_CAP, MAP_PIN_AREA, PHONE,
+};
 
 #[component]
 pub fn AboutComponent() -> AnyView {
-	view! {
+    view! {
 		<section id="about" class="container py-20 px-4 mx-auto">
 			<div class="mx-auto max-w-3xl">
 				<h2 class="mb-2 text-3xl font-bold">"About Me"</h2>
@@ -67,6 +69,9 @@ pub fn AboutComponent() -> AnyView {
 									icon=icondata::FaSquareYoutubeBrands
 									attr:class="h-10 w-10"
 								/>
+							</A>
+							<A href="/lance-phillip-resume.docx" attr:download>
+								<Icon icon=DOWNLOAD_SIMPLE attr:class="h-10 w-10" />
 							</A>
 						</div>
 					</div>
