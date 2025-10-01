@@ -54,9 +54,10 @@ pub fn ContextProvider(children: Children) -> impl IntoView {
 	};
 
 	view! {
-		<Provider value=config_injection>
-			<Html {..} class="scroll-smooth" attr:data-theme=theme_attr />
-			{children()}
-		</Provider>
+	    <Provider value=config_injection>
+		  <Html {..} class="scroll-smooth" attr:data-theme=theme_attr />
+		  {children()}
+	    </Provider>
 	}
+	.into_any()
 }

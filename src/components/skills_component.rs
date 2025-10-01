@@ -3,21 +3,21 @@ mod skills;
 use leptos::prelude::*;
 
 use crate::components::skills_component::skills::{
-    backend::BackendTab, frontend::FrontendTab, tools_others::ToolsOthersTab,
+	backend::BackendTab, frontend::FrontendTab, tools_others::ToolsOthersTab,
 };
 
 #[derive(Debug, Clone, PartialEq, Eq)]
 enum TabType {
-    Frontend,
-    Backend,
-    Others,
+	Frontend,
+	Backend,
+	Others,
 }
 
 #[component]
 pub fn SkillsComponent() -> impl IntoView {
-    let tab_view = RwSignal::new(TabType::Frontend);
+	let tab_view = RwSignal::new(TabType::Frontend);
 
-    view! {
+	view! {
 		<section id="skills" class="container py-20 px-4 mx-auto">
 			<div>
 				<h2 class="mb-2 text-3xl font-bold">"Skills & Technologies"</h2>
@@ -35,6 +35,7 @@ pub fn SkillsComponent() -> impl IntoView {
 								},
 							)
 						}
+
 						on:click=move |_| tab_view.set(TabType::Frontend)
 					>
 						"Frontend"
@@ -44,7 +45,11 @@ pub fn SkillsComponent() -> impl IntoView {
 						class=move || {
 							format!(
 								"tab text-primary [--tab-border-color:primary] [--tab-bg:primary] {}",
-								if tab_view.get().eq(&TabType::Backend) { "tab-active" } else { "" },
+								if tab_view.get().eq(&TabType::Backend) {
+									"tab-active"
+								} else {
+									""
+								},
 							)
 						}
 						on:click=move |_| tab_view.set(TabType::Backend)
@@ -56,7 +61,11 @@ pub fn SkillsComponent() -> impl IntoView {
 						class=move || {
 							format!(
 								"tab text-primary [--tab-border-color:primary] [--tab-bg:primary] {}",
-								if tab_view.get().eq(&TabType::Others) { "tab-active" } else { "" },
+								if tab_view.get().eq(&TabType::Others) {
+									"tab-active"
+								} else {
+									""
+								},
 							)
 						}
 						on:click=move |_| tab_view.set(TabType::Others)
@@ -68,19 +77,21 @@ pub fn SkillsComponent() -> impl IntoView {
 			</div>
 		</section>
 	}
+	.into_any()
 }
 
 #[component]
-fn TabView(#[prop(into)] tab_type: Signal<TabType>) -> impl IntoView {
-    view! {
-        <div class="grid grid-cols-2 gap-4 mt-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-            {move || {
-                match tab_type.get() {
-                    TabType::Frontend => view! { <FrontendTab /> }.into_any(),
-                    TabType::Backend => view! { <BackendTab /> }.into_any(),
-                    _ => view! { <ToolsOthersTab /> }.into_any(),
-                }
-            }}
-        </div>
-    }
+fn TabView(#[prop(into)] tab_type: RwSignal<TabType>) -> impl IntoView {
+	view! {
+	    <div class="grid grid-cols-2 gap-4 mt-6 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
+		  {move || {
+			match tab_type.get() {
+			    TabType::Frontend => view! { <FrontendTab /> }.into_any(),
+			    TabType::Backend => view! { <BackendTab /> }.into_any(),
+			    _ => view! { <ToolsOthersTab /> }.into_any(),
+			}
+		  }}
+	    </div>
+	}
+	.into_any()
 }

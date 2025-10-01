@@ -8,88 +8,87 @@ use crate::{
 };
 
 #[component]
-pub fn ToolsOthersTab() -> AnyView {
+pub fn ToolsOthersTab() -> impl IntoView {
 	view! {
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<LinuxTux />
-				</div>
-				<p class="text-sm">"Linux"</p>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <LinuxTux />
 			</div>
-		</CardComponent>
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<Git />
-				</div>
-				<p class="text-sm">"Git"</p>
+			<p class="text-sm">"Linux"</p>
+		  </div>
+	    </CardComponent>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <Git />
 			</div>
-		</CardComponent>
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<GitHub />
-				</div>
-				<p class="text-sm">"GitHub"</p>
+			<p class="text-sm">"Git"</p>
+		  </div>
+	    </CardComponent>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <GitHub />
 			</div>
-		</CardComponent>
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<Tauri />
-				</div>
-				<p class="text-sm">"Tauri"</p>
+			<p class="text-sm">"GitHub"</p>
+		  </div>
+	    </CardComponent>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <Tauri />
 			</div>
-		</CardComponent>
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<Agile />
-				</div>
-				<p class="text-sm">"Agile"</p>
+			<p class="text-sm">"Tauri"</p>
+		  </div>
+	    </CardComponent>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <Agile />
 			</div>
-		</CardComponent>
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<GithubActions />
-				</div>
-				<p class="text-sm">"GitHub Actions"</p>
+			<p class="text-sm">"Agile"</p>
+		  </div>
+	    </CardComponent>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <GithubActions />
 			</div>
-		</CardComponent>
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<Nginx />
-				</div>
-				<p class="text-sm">"Nginx"</p>
+			<p class="text-sm">"GitHub Actions"</p>
+		  </div>
+	    </CardComponent>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <Nginx />
 			</div>
-		</CardComponent>
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<Python />
-				</div>
-				<p class="text-sm">"Python"</p>
+			<p class="text-sm">"Nginx"</p>
+		  </div>
+	    </CardComponent>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <Python />
 			</div>
-		</CardComponent>
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<FigmaDesign />
-				</div>
-				<p class="text-sm">"Figma"</p>
+			<p class="text-sm">"Python"</p>
+		  </div>
+	    </CardComponent>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <FigmaDesign />
 			</div>
-		</CardComponent>
-		<CardComponent>
-			<div>
-				<div class="flex justify-center mb-2">
-					<Jest />
-				</div>
-				<p class="text-sm">"Jest"</p>
+			<p class="text-sm">"Figma"</p>
+		  </div>
+	    </CardComponent>
+	    <CardComponent>
+		  <div>
+			<div class="flex justify-center mb-2">
+			    <Jest />
 			</div>
-		</CardComponent>
+			<p class="text-sm">"Jest"</p>
+		  </div>
+	    </CardComponent>
 	}
-	.into_any()
 }

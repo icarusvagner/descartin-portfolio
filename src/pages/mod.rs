@@ -12,10 +12,11 @@ use crate::components::{
 #[component]
 pub fn HomePage() -> impl IntoView {
 	view! {
-		<HeroComponent />
-		<AboutComponent />
-		<SkillsComponent />
-		<ExperienceComponent />
-		<ContactComponent />
+	    <HeroComponent />
+	    <AboutComponent />
+	    <SkillsComponent />
+	    <ExperienceComponent />
+	    <ContactComponent />
 	}
+	.into_any()
 }

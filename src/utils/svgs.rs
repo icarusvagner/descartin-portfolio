@@ -25,6 +25,7 @@ pub fn InitialSVGLogo(#[prop(into, optional)] class: MaybeProp<String>) -> impl 
 			<path d="M61 164L300.5 403V576.5L61 815V164Z" fill="#FD6E09" />
 		</svg>
 	}
+	.into_any()
 }
 
 #[component]
@@ -50,4 +51,5 @@ pub fn InitialSVGLogoTransparent(
 			<path d="M61 164L300.5 403V576.5L61 815V164Z" fill="currentColor" />
 		</svg>
 	}
+	.into_any()
 }

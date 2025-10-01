@@ -1,0 +1,6 @@
+[env]
+RUST_LOG="portfolio_v1=debug"
+RUSTFLAGS="--cfg erase_components"
+
+[target.wasm32-unknown-unknown]
+rustflags = ["-C", "target-feature=+bulk-memory"]
