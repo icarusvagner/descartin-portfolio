@@ -30,6 +30,7 @@ ENV RUSTFLAGS="--cfg erase_components"
 ENV CARGO_TARGET_WASM32_UNKNOWN_UNKNOWN_RUSTFLAGS="-C target-feature=+bulk-memory"
 
 # Build the app
+RUN npm install
 RUN cargo leptos build --release -vv
 
 FROM debian:bookworm-slim as runtime
