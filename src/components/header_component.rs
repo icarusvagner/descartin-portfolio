@@ -1,7 +1,7 @@
 use leptos::prelude::*;
 use leptos_icons::Icon as LeptosIcon;
 use leptos_router::components::A;
-use phosphor_leptos::{Icon as PhosphorIcon, LIST};
+use phosphor_leptos::{Icon as PhosphorIcon, LIST, X};
 
 use crate::{mcp::ModalContextProvider, utils::svgs::InitialSVGLogo};
 
@@ -28,9 +28,6 @@ pub fn HeaderComponent() -> impl IntoView {
 					<A href="#contact" attr:class="btn btn-soft btn-info">
 						"Get in touch"
 					</A>
-					// <button class="block md:hidden btn btn-ghost">
-					// <PhosphorIcon icon=LIST attr:class="h-8 w-8" />
-					// </button>
 					<Sidebar>
 						<label for="my-drawer-4" class="drawer-button btn btn-ghost">
 							<PhosphorIcon icon=LIST attr:class="h-8 w-8" />
@@ -55,74 +52,84 @@ pub fn HeaderComponent() -> impl IntoView {
 
 #[component]
 fn Sidebar(children: Children) -> impl IntoView {
-	view! {
-	    <div class="md:hidden drawer drawer-end">
-		  <input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
-		  <div class="drawer-content">{children()}</div>
-		  <div class="drawer-side">
-			<label
-			    for="my-drawer-4"
-			    aria-label="close sidebar"
-			    class="drawer-overlay"
-			></label>
-			<div class="p-4 w-80 min-h-full menu bg-base-200">
-			    <ul class="text-base-content">
-				  <li>
-					<LinkTag title="About" link="#about" />
-				  </li>
-				  // <li>
-				  // <LinkTag title="Projects" link="#projects" />
-				  // </li>
-				  <li>
-					<LinkTag title="Skills" link="#skills" />
-				  </li>
-				  <li>
-					<LinkTag title="Experience" link="#experience" />
-				  </li>
-				  <li>
-					<LinkTag title="Contact" link="#contact" />
-				  </li>
-				  <li>
-					<LinkTag
-					    title="Download Resume"
-					    link="/lance-phillip-resume.docx"
-					    attr:download
-					/>
-				  </li>
-			    </ul>
+	let context = ModalContextProvider::expect_context();
 
-			    <div class="flex gap-4 mx-auto mt-auto">
-				  <A
-					href="https://github.com/icarusvagner"
-					attr:class="cursor-pointer"
-				  >
-					<LeptosIcon
-					    icon=icondata::FaSquareGithubBrands
-					    attr:class="h-10 w-10"
-					/>
-				  </A>
-				  <A
-					href="https://www.linkedin.com/in/lance-phillip-descartin-189139241/"
-					attr:class="cursor-pointer"
-				  >
-					<LeptosIcon
-					    icon=icondata::FaLinkedinBrands
-					    attr:class="h-10 w-10"
-					/>
-				  </A>
-				  <A
-					href="https://youtube.com/@cnalecoding"
-					attr:class="cursor-pointer"
-				  >
-					<LeptosIcon
-					    icon=icondata::FaSquareYoutubeBrands
-					    attr:class="h-10 w-10"
-					/>
-				  </A>
-			    </div>
+	view! {
+		<div class="md:hidden drawer drawer-end">
+			<input id="my-drawer-4" type="checkbox" class="drawer-toggle" />
+			<div class="drawer-content">{children()}</div>
+			<div class="drawer-side">
+				<label for="my-drawer-4" aria-label="close sidebar" class="drawer-overlay">
+					<PhosphorIcon icon=X attr:class="h-5 w-5" />
+				</label>
+				<div class="p-4 min-h-full w-70 menu bg-base-200">
+					<ul class="text-base-content">
+						<li>
+							<LinkTag title="About" link="#about" />
+						</li>
+						// <li>
+						// <LinkTag title="Projects" link="#projects" />
+						// </li>
+						<li>
+							<LinkTag title="Skills" link="#skills" />
+						</li>
+						<li>
+							<LinkTag title="Experience" link="#experience" />
+						</li>
+						<li>
+							<LinkTag title="Contact" link="#contact" />
+						</li>
+						<li>
+							<LinkTag
+								title="Download Resume"
+								link="/lance-phillip-resume.docx"
+								attr:download
+							/>
+						</li>
+						<li>
+							<button
+								class="overflow-hidden relative py-2 px-3 text-center transition-all duration-200 ease-in-out hover:text-primary"
+								on:click=move |_| {
+									context.update_theme();
+								}
+							>
+								"Change Theme"
+							</button>
+						</li>
+					</ul>
+
+					<div class="flex gap-4 mx-auto mt-auto">
+						<A
+							href="https://github.com/icarusvagner"
+							attr:class="cursor-pointer"
+						>
+							<LeptosIcon
+								icon=icondata::FaSquareGithubBrands
+								attr:class="h-10 w-10"
+							/>
+						</A>
+						<A
+							href="https://www.linkedin.com/in/lance-phillip-descartin-189139241/"
+							attr:class="cursor-pointer"
+						>
+							<LeptosIcon
+								icon=icondata::FaLinkedinBrands
+								attr:class="h-10 w-10"
+							/>
+						</A>
+						<A
+							href="https://youtube.com/@cnalecoding"
+							attr:class="cursor-pointer"
+						>
+							<LeptosIcon
+								icon=icondata::FaSquareYoutubeBrands
+								attr:class="h-10 w-10"
+							/>
+						</A>
+					</div>
+				</div>
 			</div>
-		  </div>
-	    </div>
+		</div>
 	}
 	.into_any()
 }
